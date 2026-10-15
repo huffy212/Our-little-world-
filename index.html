@@ -2,645 +2,823 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#fff7f3">
-<meta name="description" content="Our Little World, made for Huffy and Liora, since 22 November 2025.">
-<title>Huffy & Liora — Our Little World ♡</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff8f5">
+  <meta name="description" content="Our Little World — a little corner of the internet made for Huffy and Liora.">
+  <title>Our Little World ♡</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --cream: #fff7f3;
-  --paper: #fffaf7;
-  --rose: #c77f8e;
-  --wine: #713e4d;
-  --ink: #49343a;
-  --muted: #8d737a;
-  --line: #efdadd;
-  --shadow: 0 16px 45px #895a6412;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--ink);
-  font-family: 'DM Sans', sans-serif;
-}
-img { max-width: 100%; }
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 15px clamp(16px, 5vw, 65px);
-  background: #fff8f3ed;
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--line);
-}
-.brand {
-  font: 24px 'Playfair Display', serif;
-  color: var(--wine);
-  text-decoration: none;
-  white-space: nowrap;
-}
-.brand span { color: var(--rose); }
-nav { display: flex; gap: 20px; flex-wrap: wrap; }
-nav a {
-  color: #795a63;
-  font-size: 10px;
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-nav a:hover { color: var(--rose); }
-.nav-note {
-  font: 20px 'Caveat', cursive;
-  color: #9a6877;
-  white-space: nowrap;
-}
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 35px;
-  padding: 65px clamp(22px, 8vw, 110px);
-  background:
-    radial-gradient(ellipse at 85% 15%, #f4d2cf 0, transparent 40%),
-    linear-gradient(135deg, #fff8f3, #fbe8e4 65%, #f3d5d4);
-}
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 10px;
-  color: #ad7180;
-  font-weight: 600;
-}
-.hero h1 {
-  font: clamp(55px, 8vw, 95px)/1 'Playfair Display', serif;
-  font-weight: 400;
-  color: var(--wine);
-  margin: 22px 0;
-  letter-spacing: -2px;
-}
-.hero h1 em { font-weight: 400; }
-.hero-copy {
-  max-width: 480px;
-  font: 17px/1.9 'Playfair Display', serif;
-  color: #7d6068;
-}
-.hero-copy strong { color: var(--wine); }
-.cta {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 14px 22px;
-  background: var(--rose);
-  color: white;
-  text-decoration: none;
-  border-radius: 99px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-}
-.hero-photo-wrap {
-  position: relative;
-  width: 100%;
-  max-width: 450px;
-  justify-self: center;
-  padding: 12px;
-  background: white;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-  transform: rotate(2deg);
-}
-.hero-photo-wrap img {
-  display: block;
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  object-position: center 35%;
-}
-.photo-caption {
-  text-align: center;
-  font: 25px 'Caveat', cursive;
-  color: #9c6474;
-  padding: 12px 0 3px;
-}
-.floating-note {
-  position: absolute;
-  right: -18px;
-  top: 25px;
-  padding: 12px;
-  background: #fff8f2ed;
-  font: 21px 'Caveat', cursive;
-  color: var(--wine);
-  transform: rotate(7deg);
-  box-shadow: var(--shadow);
-}
-section.content { padding: 75px clamp(22px, 7vw, 95px); }
-.section-heading {
-  text-align: center;
-  max-width: 660px;
-  margin: 0 auto 38px;
-}
-.section-heading h2 {
-  font: clamp(34px, 5vw, 48px)/1.15 'Playfair Display', serif;
-  font-weight: 400;
-  color: var(--wine);
-  margin: 13px 0;
-}
-.section-heading p {
-  font: 15px/1.8 'Playfair Display', serif;
-  color: var(--muted);
-}
-.story {
-  display: grid;
-  grid-template-columns: .85fr 1.2fr .65fr;
-  align-items: center;
-  gap: 35px;
-  background: var(--paper);
-}
-.polaroid {
-  padding: 10px 10px 0;
-  background: white;
-  border: 1px solid #f0e1df;
-  box-shadow: var(--shadow);
-  transform: rotate(-4deg);
-  max-width: 290px;
-  margin: auto;
-}
-.polaroid img {
-  display: block;
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-.polaroid figcaption {
-  font: 24px 'Caveat', cursive;
-  text-align: center;
-  color: #9a6877;
-  padding: 10px;
-}
-.story-text {
-  text-align: center;
-  font: 16px/1.9 'Playfair Display', serif;
-  color: #806870;
-}
-.story-text h2 {
-  font: 38px 'Playfair Display', serif;
-  font-weight: 400;
-  color: var(--wine);
-  margin: 12px 0;
-}
-.signature {
-  font: 30px 'Caveat', cursive;
-  color: var(--wine);
-  margin-top: 18px;
-}
-.scrap {
-  padding: 24px 18px;
-  background: #f8e8e4;
-  transform: rotate(3deg);
-  font: 24px/1.5 'Caveat', cursive;
-  text-align: center;
-  color: #966675;
-  border: 1px solid #f0d6d3;
-}
-.memories {
-  background: linear-gradient(180deg, #fcebe7, #fff7f3);
-}
-.memory-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  max-width: 1100px;
-  margin: auto;
-}
-.memory {
-  background: #fffdfb;
-  border: 1px solid var(--line);
-  padding: 10px 10px 16px;
-  box-shadow: var(--shadow);
-  cursor: pointer;
-  transition: transform .2s;
-}
-.memory:nth-child(1) { transform: rotate(-1deg); }
-.memory:nth-child(2) { transform: translateY(12px) rotate(1deg); }
-.memory:nth-child(3) { transform: rotate(1deg); }
-.memory:hover { transform: translateY(-4px); }
-.memory img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  display: block;
-}
-.memory h3 {
-  font: 23px 'Playfair Display', serif;
-  font-weight: 400;
-  color: var(--wine);
-  margin: 14px 7px 5px;
-}
-.memory p {
-  font: 13px/1.6 'Playfair Display', serif;
-  color: var(--muted);
-  margin: 0 7px;
-}
-.time-section {
-  background: var(--paper);
-  position: relative;
-  text-align: center;
-}
-.timer {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(70px, 130px));
-  gap: 12px;
-  justify-content: center;
-  margin: 34px auto 18px;
-}
-.time-box {
-  border: 1px solid #edcfd4;
-  border-radius: 10px;
-  padding: 18px 10px;
-  background: #fff8f5;
-}
-.time-box strong {
-  display: block;
-  font: clamp(27px, 4vw, 38px) 'Playfair Display', serif;
-  color: var(--wine);
-  font-weight: 400;
-}
-.time-box span {
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #9a737c;
-}
-.since {
-  font: 14px 'Playfair Display', serif;
-  color: #916a74;
-}
-.date {
-  display: block;
-  font-size: 13px;
-  margin-top: 10px;
-  color: var(--wine);
-}
-.letter-section {
-  background: linear-gradient(120deg, #f8e1df, #fff5ef 55%, #f4d8d5);
-}
-.letter {
-  max-width: 780px;
-  margin: auto;
-  padding: clamp(25px, 5vw, 55px);
-  background: #fffaf4e8;
-  border: 1px solid #f0d8d4;
-  box-shadow: var(--shadow);
-  text-align: center;
-}
-.letter h2 {
-  font: clamp(34px, 5vw, 46px) 'Playfair Display', serif;
-  font-weight: 400;
-  color: var(--wine);
-  margin: 14px 0 24px;
-}
-.letter p {
-  font: 16px/2 'Playfair Display', serif;
-  color: #7c5e66;
-  margin: 0 auto 15px;
-  max-width: 600px;
-}
-.letter .sign {
-  font: 32px 'Caveat', cursive;
-  color: var(--wine);
-  margin-top: 20px;
-}
-.quote-band {
-  padding: 55px 20px;
-  text-align: center;
-  background: linear-gradient(120deg, #9e6877, #714653);
-  color: #fff6f1;
-}
-.quote-band p {
-  font: italic clamp(23px, 4vw, 36px)/1.5 'Playfair Display', serif;
-  margin: auto;
-  max-width: 820px;
-}
-.quote-band small {
-  display: block;
-  margin-top: 18px;
-  letter-spacing: 3px;
-  font-size: 9px;
-}
-.footer {
-  text-align: center;
-  padding: 24px 16px 30px;
-  color: #9d7b83;
-  font-size: 11px;
-  line-height: 2;
-}
-.lightbox {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 30;
-  background: #21161bef;
-  align-items: center;
-  justify-content: center;
-  padding: 22px;
-}
-.lightbox.open { display: flex; }
-.lightbox img {
-  max-width: 92vw;
-  max-height: 86vh;
-  object-fit: contain;
-}
-.lightbox button {
-  position: absolute;
-  top: 18px;
-  right: 22px;
-  border: 0;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  background: white;
-  color: var(--wine);
-  font-size: 27px;
-  cursor: pointer;
-}
-@media(max-width:850px) {
-  .topbar { flex-wrap: wrap; justify-content: center; }
-  .nav-note { display: none; }
-  nav { justify-content: center; gap: 14px; }
-  .hero { grid-template-columns: 1fr; text-align: center; }
-  .hero-copy { margin: auto; }
-  .hero-photo-wrap { max-width: 390px; }
-  .hero-photo-wrap img { height: 380px; }
-  .story { grid-template-columns: 1fr 1.2fr; }
-  .story .scrap { grid-column: 1/-1; max-width: 350px; margin: auto; }
-  .memory img { height: 260px; }
-}
-@media(max-width:560px) {
-  .topbar { padding: 12px 8px; }
-  .brand { font-size: 22px; }
-  nav { gap: 12px; }
-  nav a { font-size: 9px; }
-  .hero { padding: 45px 22px 55px; }
-  .hero h1 { font-size: 62px; }
-  .hero-photo-wrap img { height: 340px; }
-  section.content { padding: 55px 20px; }
-  .story { grid-template-columns: 1fr; }
-  .polaroid { max-width: 270px; }
-  .polaroid img { height: 290px; }
-  .story .scrap { grid-column: auto; max-width: 280px; }
-  .memory-grid { grid-template-columns: 1fr; max-width: 360px; }
-  .memory:nth-child(n) { transform: none; }
-  .memory img { height: 390px; }
-  .timer { grid-template-columns: repeat(2, minmax(100px, 135px)); }
-  .letter { padding: 28px 20px; }
-  .letter p { font-size: 15px; }
-  .quote-band { padding: 42px 24px; }
-}
-@media(prefers-reduced-motion:reduce) {
-  html { scroll-behavior: auto; }
-  * { transition: none !important; }
-}
-</style>
+  <style>
+    :root {
+      --cream: #fff8f5;
+      --pink: #f4d9dc;
+      --rose: #b66c79;
+      --dark: #35252b;
+      --muted: #806e73;
+      --white: #ffffff;
+      --line: #eadcdd;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--dark);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 17px 7%;
+      background: rgba(255, 248, 245, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .logo span {
+      color: var(--rose);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--rose);
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 75px 22px;
+      position: relative;
+      background:
+        radial-gradient(ellipse at 15% 20%, #f7e4e4 0, transparent 38%),
+        radial-gradient(ellipse at 85% 75%, #f4e8dc 0, transparent 38%),
+        var(--cream);
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 0.68rem;
+      color: var(--rose);
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3.1rem, 9vw, 6.4rem);
+      font-weight: 400;
+      line-height: 1.08;
+      max-width: 900px;
+    }
+
+    .hero h1 em {
+      color: var(--rose);
+      font-weight: 400;
+    }
+
+    .hero p {
+      max-width: 440px;
+      margin: 24px auto 30px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .handwritten {
+      font-family: "Caveat", cursive;
+      font-size: 1.8rem;
+      color: var(--rose);
+    }
+
+    .button {
+      display: inline-block;
+      border: 1px solid var(--rose);
+      background: var(--rose);
+      color: white;
+      padding: 13px 24px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      transition: 0.25s;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: transparent;
+      color: var(--rose);
+      transform: translateY(-2px);
+    }
+
+    .hero-heart {
+      margin-top: 38px;
+      color: var(--rose);
+      font-size: 1.5rem;
+      animation: heartbeat 1.8s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.16); }
+    }
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.1rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .section-heading p {
+      max-width: 520px;
+      margin: 14px auto 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .story {
+      background: white;
+    }
+
+    .story-content {
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .story-content p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .story-content .big-letter {
+      font-family: "Playfair Display", serif;
+      font-size: 1.3rem;
+      color: var(--dark);
+      line-height: 1.9;
+    }
+
+    .gallery {
+      background: var(--cream);
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .photo-card {
+      grid-column: span 2;
+      background: white;
+      padding: 10px 10px 16px;
+      border: 1px solid #f0e6e5;
+      border-radius: 5px;
+      box-shadow: 0 8px 24px rgba(75, 42, 48, 0.06);
+      transition: transform 0.25s, box-shadow 0.25s;
+      cursor: pointer;
+      min-width: 0;
+    }
+
+    .photo-card:nth-child(4) {
+      grid-column: 2 / span 2;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-5px) rotate(-0.5deg);
+      box-shadow: 0 12px 30px rgba(75, 42, 48, 0.12);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      background: #f1e5e5;
+      border-radius: 3px;
+    }
+
+    .photo-caption {
+      text-align: center;
+      font-family: "Caveat", cursive;
+      font-size: 1.4rem;
+      color: var(--muted);
+      padding-top: 10px;
+    }
+
+    .anniversary {
+      text-align: center;
+      color: white;
+      background: #493139;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .anniversary .eyebrow {
+      color: #e6b7bf;
+    }
+
+    .anniversary .section-heading h2 {
+      color: white;
+    }
+
+    .anniversary .section-heading p {
+      color: #e3d2d6;
+    }
+
+    .counter {
+      display: flex;
+      justify-content: center;
+      gap: clamp(12px, 4vw, 40px);
+      flex-wrap: wrap;
+      margin: 42px auto 25px;
+    }
+
+    .counter-item {
+      min-width: 75px;
+    }
+
+    .counter-number {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.3rem, 6vw, 4rem);
+      line-height: 1.2;
+      color: #f2c8ce;
+    }
+
+    .counter-label {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.67rem;
+      color: #e3d2d6;
+    }
+
+    .anniversary-note {
+      font-family: "Caveat", cursive;
+      font-size: 1.8rem;
+      color: #f2c8ce;
+    }
+
+    .letter {
+      background: white;
+    }
+
+    .letter-paper {
+      max-width: 740px;
+      margin: auto;
+      padding: clamp(25px, 6vw, 55px);
+      background: #fffaf6;
+      border: 1px solid #eadbd8;
+      box-shadow: 0 12px 40px rgba(75, 42, 48, 0.05);
+      position: relative;
+    }
+
+    .letter-paper::before {
+      content: "♡";
+      position: absolute;
+      top: 12px;
+      right: 22px;
+      font-size: 2rem;
+      color: #d9a2ac;
+    }
+
+    .letter-paper h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.9rem;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+
+    .letter-paper p {
+      color: var(--muted);
+      margin-bottom: 17px;
+    }
+
+    .signature {
+      font-family: "Caveat", cursive;
+      font-size: 2rem;
+      color: var(--rose);
+      margin-top: 25px;
+    }
+
+    .quote-section {
+      text-align: center;
+      background: #f7e9e8;
+      padding-top: 75px;
+      padding-bottom: 75px;
+    }
+
+    .quote-mark {
+      font-family: "Playfair Display", serif;
+      color: var(--rose);
+      font-size: 4rem;
+      line-height: 0.8;
+    }
+
+    blockquote {
+      max-width: 760px;
+      margin: 15px auto;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      line-height: 1.5;
+    }
+
+    .quote-credit {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: var(--cream);
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    footer .footer-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.25rem;
+      color: var(--dark);
+      margin-bottom: 7px;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(25, 15, 19, 0.92);
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      display: block;
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .close-lightbox {
+      position: absolute;
+      top: 16px;
+      right: 22px;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 2.5rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .top-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--rose);
+    }
+
+    @media (max-width: 650px) {
+      .nav {
+        padding: 14px 5%;
+      }
+
+      .nav-links {
+        gap: 11px;
+        font-size: 0.74rem;
+      }
+
+      .logo {
+        font-size: 1rem;
+        white-space: nowrap;
+      }
+
+      .hero {
+        min-height: 78vh;
+      }
+
+      section {
+        padding: 70px 5%;
+      }
+
+      .photo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .photo-card,
+      .photo-card:nth-child(4) {
+        grid-column: auto;
+      }
+
+      .photo-card:last-child {
+        grid-column: 1 / -1;
+        width: calc(50% - 6px);
+        justify-self: center;
+      }
+
+      .photo-card img {
+        height: 220px;
+      }
+
+      .counter {
+        gap: 22px;
+      }
+
+      .counter-item {
+        min-width: 65px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .photo-card img {
+        height: 175px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<header class="topbar">
-  <a class="brand" href="#home">Huffy <span>&</span> Liora ♡</a>
-  <nav aria-label="Main navigation">
-    <a href="#home">Home</a>
-    <a href="#story">Our story</a>
-    <a href="#memories">Memories</a>
-    <a href="#time">Our time</a>
-    <a href="#letter">Letter</a>
+
+  <nav class="nav">
+    <a href="#home" class="logo">Our Little World <span>♡</span></a>
+    <div class="nav-links">
+      <a href="#story">Our Story</a>
+      <a href="#memories">Memories</a>
+      <a href="#time">Our Time</a>
+      <a href="#letter">A Letter</a>
+    </div>
   </nav>
-  <div class="nav-note">Always better together ♡</div>
-</header>
 
-<main>
-<section class="hero" id="home">
-  <div>
+  <header class="hero" id="home">
     <div class="eyebrow">A little place made for us</div>
-    <h1>Huffy &<br><em>Liora.</em></h1>
-    <p class="hero-copy">
-      Two hearts, two stories, one little world.
-      Welcome to our corner of the universe,
-      <strong>Huffy & Liora. ♡</strong>
-    </p>
-    <a class="cta" href="#story">STEP INTO OUR WORLD ♡</a>
-  </div>
 
-  <div class="hero-photo-wrap">
-    <img src="our-selfie.jpg" alt="Huffy and Liora together">
-    <div class="photo-caption">You & me, always ♡</div>
-    <div class="floating-note">my favourite person</div>
-  </div>
-</section>
+    <h1>In a world full of people,<br><em>I'd still choose you.</em></h1>
 
-<section class="content story" id="story">
-  <figure class="polaroid">
-    <img src="huffy-and-liora-together-1.jpg" alt="Huffy and Liora standing together outdoors" loading="lazy">
-    <figcaption>Better together ♡</figcaption>
-  </figure>
-
-  <div class="story-text">
-    <div class="eyebrow">The beginning of something beautiful</div>
-    <h2>Our little story.</h2>
     <p>
-      It started with two people who somehow found their way
-      into each other's lives. Since then, every conversation,
-      every laugh, every difficult day, and every small moment
-      has become part of a story that belongs to us.
+      This is our little corner of the universe.
+      A home for our memories, our laughter, our growth,
+      and all the beautiful things still waiting for us.
     </p>
-    <p>
-      We don't have to be perfect to make something meaningful.
-      We just have to keep showing up, learning each other,
-      and choosing to build something real.
-    </p>
-    <div class="signature">Huffy & Liora ♡</div>
-  </div>
 
-  <aside class="scrap">
-    Same sky.<br>
-    Different places,<br>
-    one little world. ♡
-  </aside>
-</section>
+    <a href="#story" class="button">Enter our world ♡</a>
 
-<section class="content memories" id="memories">
-  <div class="section-heading">
-    <div class="eyebrow">Little moments, lasting memories</div>
-    <h2>Pieces of us.</h2>
-    <p>Real pictures. Real memories. A little reminder of the people behind this little world.</p>
-  </div>
+    <div class="hero-heart">♡</div>
+    <div class="handwritten">Just you, me, and our little world.</div>
+  </header>
 
-  <div class="memory-grid">
-    <article class="memory" tabindex="0" role="button" data-image="our-selfie.jpg">
-      <img src="our-selfie.jpg" alt="Huffy and Liora in a selfie" loading="lazy">
-      <h3>A little us</h3>
-      <p>One photo, a thousand things to remember. ♡</p>
+  <section class="story" id="story">
+    <div class="section-heading">
+      <div class="eyebrow">Chapter one</div>
+      <h2>Our little story</h2>
+      <p>Not a perfect love story. A real one, and one worth choosing every day.</p>
+    </div>
+
+    <div class="story-content">
+      <p class="big-letter">
+        Somewhere between ordinary days and unexpected moments,
+        we became something special.
+      </p>
+
+      <p>
+        There is something beautiful about finding a person with whom
+        the little things begin to mean everything. The conversations,
+        the laughter, the quiet moments, and even the days when life
+        asks a little more of us.
+      </p>
+
+      <p>
+        We are still learning each other. Still growing, still figuring
+        things out, and still writing a story that belongs to us.
+        That is what makes it ours.
+      </p>
+
+      <p class="handwritten">And this is only the beginning. ♡</p>
+    </div>
+  </section>
+
+  <section class="gallery" id="memories">
+    <div class="section-heading">
+      <div class="eyebrow">Little moments, forever</div>
+      <h2>Our memory lane</h2>
+      <p>Five little windows into our world. Tap any photo to see it larger.</p>
+    </div>
+
+    <div class="photo-grid">
+
+      <div class="photo-card" data-photo="IMG-20260915-WA0046.jpg">
+        <img
+          src="IMG-20260915-WA0046.jpg"
+          alt="A memory of Huffy and Liora"
+          loading="lazy"
+        >
+        <div class="photo-caption">A moment to keep ♡</div>
+      </div>
+
+      <div class="photo-card" data-photo="IMG-20261001-WA0182.jpg">
+        <img
+          src="IMG-20261001-WA0182.jpg"
+          alt="Another memory of Huffy and Liora"
+          loading="lazy"
+        >
+        <div class="photo-caption">My favourite kind of day</div>
+      </div>
+
+      <div class="photo-card" data-photo="IMG-20260929-WA0041.jpg">
+        <img
+          src="IMG-20260929-WA0041.jpg"
+          alt="A special moment together"
+          loading="lazy"
+        >
+        <div class="photo-caption">One for the memories</div>
+      </div>
+
+      <div class="photo-card" data-photo="IMG-20261009-WA0019.jpg">
+        <img
+          src="IMG-20261009-WA0019.jpg"
+          alt="A captured moment in our story"
+          loading="lazy"
+        >
+        <div class="photo-caption">Us, being us</div>
+      </div>
+
+      <div class="photo-card" data-photo="IMG-20260916-WA0001.jpg">
+        <img
+          src="IMG-20260916-WA0001.jpg"
+          alt="Another captured memory"
+          loading="lazy"
+        >
+        <div class="photo-caption">A little piece of forever ♡</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="anniversary" id="time">
+    <div class="section-heading">
+      <div class="eyebrow">Since the beginning</div>
+      <h2>Look how far we've come.</h2>
+      <p>
+        Every second is another small piece of the time
+        we have spent being part of each other's lives.
+      </p>
+    </div>
+
+    <div class="counter">
+      <div class="counter-item">
+        <span class="counter-number" id="days">0</span>
+        <span class="counter-label">Days</span>
+      </div>
+
+      <div class="counter-item">
+        <span class="counter-number" id="hours">00</span>
+        <span class="counter-label">Hours</span>
+      </div>
+
+      <div class="counter-item">
+        <span class="counter-number" id="minutes">00</span>
+        <span class="counter-label">Minutes</span>
+      </div>
+
+      <div class="counter-item">
+        <span class="counter-number" id="seconds">00</span>
+        <span class="counter-label">Seconds</span>
+      </div>
+    </div>
+
+    <div class="anniversary-note">
+      Since 22 November 2025, and counting. ♡
+    </div>
+  </section>
+
+  <section class="letter" id="letter">
+    <div class="section-heading">
+      <div class="eyebrow">Words from the heart</div>
+      <h2>A little letter for you</h2>
+    </div>
+
+    <article class="letter-paper">
+      <h3>To my favourite person,</h3>
+
+      <p>
+        If there is one thing I want you to know, it is that I don't
+        see what we have as something to take for granted. Having
+        someone to share life with is a beautiful thing, and I want
+        to treat what we have with the care it deserves.
+      </p>
+
+      <p>
+        I know that love is more than sweet words and beautiful
+        moments. It is patience, honesty, effort, accountability,
+        and the willingness to understand each other even when
+        things are not easy.
+      </p>
+
+      <p>
+        I cannot promise that every day will be perfect. What I can
+        promise is that I want to keep learning, keep growing, and
+        keep showing up with intention. I want us to build something
+        that feels safe, genuine, and strong enough to grow with us.
+      </p>
+
+      <p>
+        Thank you for being part of my world. For the moments we
+        already have, for the ones we are creating now, and for
+        all the ordinary little days that may one day become
+        our favourite memories.
+      </p>
+
+      <p>
+        Whatever the future brings, I hope we never stop making
+        room for laughter, honest conversations, new experiences,
+        and the small things that make us who we are together.
+      </p>
+
+      <p>Here's to us, and to the story we are still writing.</p>
+
+      <div class="signature">With love, always. ♡</div>
     </article>
+  </section>
 
-    <article class="memory" tabindex="0" role="button" data-image="huffy-and-liora-together-1.jpg">
-      <img src="huffy-and-liora-together-1.jpg" alt="Huffy and Liora together outdoors" loading="lazy">
-      <h3>Side by side</h3>
-      <p>One of those moments worth keeping. ♡</p>
-    </article>
+  <section class="quote-section">
+    <div class="quote-mark">“</div>
+    <blockquote>
+      The beautiful thing isn't finding someone perfect.
+      It's choosing to grow together, imperfectly and honestly.
+    </blockquote>
+    <div class="quote-credit">A little reminder for us ♡</div>
+  </section>
 
-    <article class="memory" tabindex="0" role="button" data-image="huffy-and-liora-together-2.jpg">
-      <img src="huffy-and-liora-together-2.jpg" alt="Another photo of Huffy and Liora together" loading="lazy">
-      <h3>Our kind of memory</h3>
-      <p>More chapters for this story. ♡</p>
-    </article>
+  <footer>
+    <div class="footer-title">Our Little World ♡</div>
+    <p>Made with love, for Huffy &amp; Liora.</p>
+    <p>One story. Two people. A thousand little moments.</p>
+    <a href="#home" class="top-link">Back to the beginning ↑</a>
+  </footer>
+
+  <div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Enlarged photograph"
+  >
+    <button class="close-lightbox" id="closeLightbox" aria-label="Close photo">&times;</button>
+    <img id="lightboxImage" src="" alt="Enlarged memory">
   </div>
-</section>
 
-<section class="content time-section" id="time">
-  <div class="section-heading">
-    <div class="eyebrow">And the story keeps going</div>
-    <h2>Time spent being us.</h2>
-    <p>Every day is another page in our story.</p>
-  </div>
+  <script>
+    // Relationship start date: 22 November 2025.
+    // Months in JavaScript start at zero, so November is 10.
+    const startDate = new Date(2025, 10, 22, 0, 0, 0);
 
-  <div class="timer" aria-label="Time since our official relationship date">
-    <div class="time-box"><strong id="days">0</strong><span>Days</span></div>
-    <div class="time-box"><strong id="hours">0</strong><span>Hours</span></div>
-    <div class="time-box"><strong id="minutes">0</strong><span>Minutes</span></div>
-    <div class="time-box"><strong id="seconds">0</strong><span>Seconds</span></div>
-  </div>
+    function updateCounter() {
+      const now = new Date();
+      let difference = now.getTime() - startDate.getTime();
 
-  <div class="since">
-    Since our official relationship date
-    <span class="date">♡ &nbsp; 22 November 2025 &nbsp; ♡</span>
-  </div>
-</section>
+      if (difference < 0) difference = 0;
 
-<section class="content letter-section" id="letter">
-  <article class="letter">
-    <div class="eyebrow">A little letter from Huffy</div>
-    <h2>To my Liora.</h2>
+      const totalSeconds = Math.floor(difference / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
 
-    <p>
-      If there's one thing I want this little world to remind you of,
-      it's that what we have doesn't need to look like anybody else's
-      story to be meaningful.
-    </p>
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+      document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+      document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+    }
 
-    <p>
-      I hope we keep finding reasons to laugh, patience when things
-      get difficult, and the courage to understand each other better.
-      I want the ordinary days to matter just as much as the beautiful ones.
-    </p>
+    updateCounter();
+    setInterval(updateCounter, 1000);
 
-    <p>
-      Thank you for being part of my life and of this story.
-      I want to keep choosing honesty, effort, kindness, and us—
-      not only when it is easy, but when it takes work too.
-    </p>
+    // Open gallery photos in a full-screen viewer.
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const closeLightbox = document.getElementById("closeLightbox");
 
-    <p>
-      I can't promise every page will be perfect.
-      I can promise that what we build should be real, thoughtful, and ours.
-    </p>
-
-    <div class="sign">Yours, Huffy. ♡</div>
-  </article>
-</section>
-
-<section class="quote-band">
-  <p>“Of all the places life could take me,<br>
-  I hope we keep finding our way back to each other.”</p>
-  <small>HUFFY & LIORA &nbsp; • &nbsp; OUR LITTLE WORLD</small>
-</section>
-</main>
-
-<footer class="footer">
-  Made with ♡ by Huffy, for Liora.<br>
-  Since 22 November 2025 · Our Little World ♡
-</footer>
-
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
-  <button id="closeLightbox" aria-label="Close photo">×</button>
-  <img id="lightboxImage" alt="Expanded photo of Huffy and Liora">
-</div>
-
-<script>
-(() => {
-  // Official relationship date: 22 November 2025
-  const anniversary = new Date(2025, 10, 22, 0, 0, 0);
-  const timerIds = ['days', 'hours', 'minutes', 'seconds'];
-
-  function updateTimer() {
-    let difference = Date.now() - anniversary.getTime();
-    if (difference < 0) difference = 0;
-
-    const day = 86400000;
-    const hour = 3600000;
-    const minute = 60000;
-
-    const values = [
-      Math.floor(difference / day),
-      Math.floor((difference % day) / hour),
-      Math.floor((difference % hour) / minute),
-      Math.floor((difference % minute) / 1000)
-    ];
-
-    timerIds.forEach((id, index) => {
-      document.getElementById(id).textContent =
-        values[index].toLocaleString();
+    document.querySelectorAll(".photo-card").forEach(function(card) {
+      card.addEventListener("click", function() {
+        const photo = card.dataset.photo;
+        lightboxImage.src = photo;
+        lightboxImage.alt = card.querySelector("img").alt;
+        lightbox.classList.add("open");
+        closeLightbox.focus();
+      });
     });
-  }
 
-  updateTimer();
-  setInterval(updateTimer, 1000);
+    function closePhoto() {
+      lightbox.classList.remove("open");
+      lightboxImage.src = "";
+    }
 
-  const lightbox = document.getElementById('lightbox');
-  const largePhoto = document.getElementById('lightboxImage');
+    closeLightbox.addEventListener("click", closePhoto);
 
-  function openPhoto(card) {
-    largePhoto.src = card.dataset.image;
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closePhoto() {
-    lightbox.classList.remove('open');
-    document.body.style.overflow = '';
-    largePhoto.src = '';
-  }
-
-  document.querySelectorAll('.memory[data-image]').forEach(card => {
-    card.addEventListener('click', () => openPhoto(card));
-
-    card.addEventListener('keydown', event => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        openPhoto(card);
-      }
+    lightbox.addEventListener("click", function(event) {
+      if (event.target === lightbox) closePhoto();
     });
-  });
 
-  document.getElementById('closeLightbox')
-    .addEventListener('click', closePhoto);
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") closePhoto();
+    });
 
-  lightbox.addEventListener('click', event => {
-    if (event.target === lightbox) closePhoto();
-  });
+    // Show a clear placeholder if an image filename is incorrect.
+    document.querySelectorAll(".photo-card img").forEach(function(img) {
+      img.addEventListener("error", function() {
+        img.alt = "Photo could not load. Check the filename in GitHub.";
+        img.style.objectFit = "contain";
+        img.style.padding = "20px";
+        img.style.background = "#f4e6e6";
+      });
+    });
+  </script>
 
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') closePhoto();
-  });
-})();
-</script>
 </body>
-      </html>
-  
+</html>
