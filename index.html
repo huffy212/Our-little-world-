@@ -1,469 +1,458 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f8eee9">
 <title>Our Little World ♡</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-
 <style>
 :root {
-  --ink: #392b2c;
-  --muted: #806b6c;
-  --rose: #b96f79;
-  --dark: #8f4d59;
-  --cream: #fffaf7;
-  --line: #eadbd6;
-  --blush: #f5e5e1;
+  --ink:#392b2c;
+  --muted:#806b6c;
+  --rose:#b96f79;
+  --dark:#8f4d59;
+  --cream:#fffaf7;
+  --line:#eadbd6;
+  --blush:#f5e5e1;
+  --white:#fff;
 }
-
-* {
-  box-sizing: border-box;
-}
-
+* { box-sizing:border-box }
 body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--ink);
-  font: 16px/1.65 "DM Sans", sans-serif;
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font:16px/1.65 "DM Sans",sans-serif;
 }
-
-button, input, textarea {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-.shell {
-  max-width: 1120px;
-  margin: auto;
-  padding: 0 22px;
-}
-
+button,input,textarea,select { font:inherit }
+button { cursor:pointer }
+button:disabled { opacity:.55;cursor:not-allowed }
+.shell { max-width:1120px;margin:auto;padding:0 22px }
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 0;
+  display:flex;justify-content:space-between;
+  align-items:center;padding:24px 0;gap:12px;
 }
-
-.brand {
-  font: 600 1.4rem "Playfair Display", serif;
-}
-
-.brand span {
-  color: var(--rose);
-}
-
-.muted {
-  color: var(--muted);
-  font-size: .9rem;
-}
-
+.brand { font:600 1.4rem "Playfair Display",serif }
+.brand span { color:var(--rose) }
+.muted { color:var(--muted);font-size:.9rem }
 .hero {
-  padding: clamp(32px, 7vw, 82px);
-  border-radius: 28px;
-  background: linear-gradient(135deg, #f3dfdc, #fff5ef 60%, #efe1dc);
-  position: relative;
-  overflow: hidden;
-  min-height: 360px;
-  display: flex;
-  align-items: center;
+  padding:clamp(32px,7vw,82px);
+  border-radius:28px;
+  background:linear-gradient(135deg,#f3dfdc,#fff5ef 60%,#efe1dc);
+  position:relative;overflow:hidden;min-height:360px;
+  display:flex;align-items:center;
 }
-
 .hero:after {
-  content: "♡";
-  position: absolute;
-  right: 7%;
-  top: 2%;
-  font: clamp(150px, 25vw, 290px) "Playfair Display";
-  color: #b96f791b;
+  content:"♡";position:absolute;right:7%;top:2%;
+  font:clamp(150px,25vw,290px) "Playfair Display";
+  color:#b96f791b;pointer-events:none;
 }
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 650px;
-}
-
+.hero-content { position:relative;z-index:1;max-width:650px }
 .eyebrow {
-  text-transform: uppercase;
-  letter-spacing: .19em;
-  font-size: .72rem;
-  font-weight: 700;
-  color: var(--dark);
+  text-transform:uppercase;letter-spacing:.19em;
+  font-size:.72rem;font-weight:700;color:var(--dark);
 }
-
-h1, h2, h3 {
-  font-family: "Playfair Display", serif;
-  font-weight: 500;
-  line-height: 1.15;
+h1,h2,h3 {
+  font-family:"Playfair Display",serif;
+  font-weight:500;line-height:1.2;
 }
-
 h1 {
-  font-size: clamp(2.7rem, 7vw, 5.6rem);
-  letter-spacing: -.04em;
-  margin: 15px 0;
+  font-size:clamp(2.7rem,7vw,5.6rem);
+  letter-spacing:-.04em;margin:15px 0;
 }
-
-h1 em {
-  color: var(--dark);
-}
-
-.hero p {
-  max-width: 480px;
-  color: #705b5d;
-}
-
-.date {
-  font-size: .8rem;
-  letter-spacing: .08em;
-  color: var(--muted);
-  margin-top: 25px;
-}
-
-section {
-  padding-top: 68px;
-}
-
-.sectionhead {
-  margin-bottom: 24px;
-}
-
-.sectionhead h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin: 8px 0;
-}
-
-.sectionhead p {
-  margin: 0;
-  color: var(--muted);
-}
-
-.story {
-  display: grid;
-  grid-template-columns: 1.15fr .85fr;
-  gap: 18px;
-}
-
+h1 em { color:var(--dark) }
+.hero p { max-width:480px;color:#705b5d }
+.date { font-size:.8rem;letter-spacing:.08em;color:var(--muted);margin-top:25px }
+section { padding-top:60px;scroll-margin-top:20px }
+.sectionhead { margin-bottom:24px }
+.sectionhead h2 { font-size:clamp(2rem,4vw,3rem);margin:8px 0 }
+.sectionhead p { margin:0;color:var(--muted) }
+.story { display:grid;grid-template-columns:1.15fr .85fr;gap:18px }
 .card {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  padding: clamp(22px, 4vw, 34px);
+  background:var(--white);border:1px solid var(--line);
+  border-radius:22px;padding:clamp(22px,4vw,34px);
 }
-
-.card p {
-  color: var(--muted);
-}
-
+.card p { color:var(--muted) }
 .counter {
-  background: #503b3e;
-  color: #fffaf7;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  background:#503b3e;color:var(--cream);
+  display:flex;flex-direction:column;justify-content:center;
 }
-
-.counter .eyebrow {
-  color: #efc4c7;
-}
-
+.counter .eyebrow { color:#efc4c7 }
 .days {
-  font: clamp(2.5rem, 5vw, 4rem) "Playfair Display";
-  line-height: 1.2;
-  margin: 10px 0;
+  font:clamp(2.5rem,5vw,4rem) "Playfair Display";
+  line-height:1.2;margin:10px 0;
 }
-
 .quote {
-  margin-top: 18px;
-  padding: 22px 25px;
-  border-left: 3px solid var(--rose);
-  background: #fbf0ec;
-  border-radius: 0 16px 16px 0;
-  color: #72595b;
-  font: italic 1.2rem "Playfair Display";
+  margin-top:18px;padding:22px 25px;
+  border-left:3px solid var(--rose);
+  background:#fbf0ec;border-radius:0 16px 16px 0;
+  color:#72595b;font:italic 1.2rem "Playfair Display";
 }
-
-.hidden {
-  display: none !important;
+.authwrap { max-width:560px;margin:auto }
+.field { display:grid;gap:7px;margin:14px 0 }
+.field label { font-size:.82rem;font-weight:700 }
+.field input,.field textarea,.field select {
+  width:100%;border:1px solid #e4d3ce;
+  background:#fffdfb;border-radius:12px;
+  padding:12px 14px;outline:none;color:var(--ink);
 }
-
+.field input:focus,.field textarea:focus,.field select:focus {
+  border-color:var(--rose);
+}
 .btn {
-  border: 0;
-  border-radius: 999px;
-  padding: 11px 17px;
-  font-weight: 700;
-  font-size: .9rem;
+  border:0;border-radius:999px;padding:11px 17px;
+  font-weight:700;font-size:.9rem;
 }
-
-.primary {
-  background: var(--dark);
-  color: #fff;
-}
-
-.secondary {
-  background: #f4e7e2;
-  color: #744b50;
-}
-
-.quiet {
-  background: transparent;
-  color: var(--dark);
-}
-
-.danger {
-  background: #f9e7e6;
-  color: #8d3f43;
-}
-
-.full {
-  width: 100%;
-}
-
-.field {
-  display: grid;
-  gap: 7px;
-  margin: 14px 0;
-}
-
-.field label {
-  font-size: .82rem;
-  font-weight: 700;
-}
-
-.field input,
-.field textarea {
-  width: 100%;
-  border: 1px solid #e4d3ce;
-  background: #fffdfb;
-  border-radius: 12px;
-  padding: 12px 14px;
-  outline: none;
-}
-
-.field input:focus,
-.field textarea:focus {
-  border-color: var(--rose);
-}
-
+.primary { background:var(--dark);color:white }
+.secondary { background:#f4e7e2;color:#744b50 }
+.quiet { background:transparent;color:var(--dark) }
+.danger { background:#f9e7e6;color:#8d3f43 }
+.full { width:100% }
+.hidden { display:none!important }
 .notice {
-  padding: 12px 14px;
-  border-radius: 12px;
-  margin-top: 14px;
-  font-size: .88rem;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
+  padding:12px 14px;border-radius:12px;margin-top:14px;
+  font-size:.88rem;white-space:pre-wrap;overflow-wrap:anywhere;
 }
-
-.info {
-  background: #f6eee9;
-  color: #6b5152;
-}
-
-.error {
-  background: #fff0ef;
-  color: #8c3539;
-}
-
-.success {
-  background: #eaf4ed;
-  color: #315e46;
-}
-
-.authwrap {
-  max-width: 560px;
-  margin: auto;
-}
-
+.info { background:#f6eee9;color:#6b5152 }
+.error { background:#fff0ef;color:#8c3539 }
+.success { background:#eaf4ed;color:#315e46 }
 .signedrow {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 18px;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:12px;flex-wrap:wrap;margin-bottom:18px;
 }
-
-.upload {
-  margin-bottom: 22px;
+.tools { display:flex;gap:8px;flex-wrap:wrap }
+.upload { margin-bottom:22px }
+.uploadgrid { display:grid;grid-template-columns:1fr 1fr;gap:20px }
+.drop {
+  border:1.5px dashed #d8b9b7;background:#fff9f6;
+  border-radius:16px;padding:22px;text-align:center;
 }
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 17px;
-}
-
-.photo {
-  overflow: hidden;
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-}
-
-.frame {
-  aspect-ratio: 4/4.4;
-  background: #f0e3df;
-  overflow: hidden;
-  cursor: zoom-in;
-}
-
-.frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.meta {
-  padding: 13px;
-}
-
-.caption {
-  font: 1.05rem "Playfair Display";
-  overflow-wrap: anywhere;
-}
-
-.small {
-  font-size: .75rem;
-  color: var(--muted);
-}
-
+.drop input { max-width:100%;font-size:.82rem }
+.gallery { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px }
+.photo { overflow:hidden;background:white;border:1px solid var(--line);border-radius:18px }
+.frame { aspect-ratio:4/4.4;background:#f0e3df;overflow:hidden;cursor:zoom-in }
+.frame img { width:100%;height:100%;object-fit:cover;display:block }
+.meta { padding:13px }
+.caption { font:1.05rem "Playfair Display";overflow-wrap:anywhere }
+.small { font-size:.75rem;color:var(--muted) }
+.actions { display:flex;justify-content:flex-end;gap:8px;margin-top:8px }
 .empty {
-  text-align: center;
-  border: 1px dashed #dfc7c3;
-  border-radius: 20px;
-  padding: 42px 18px;
-  color: var(--muted);
+  text-align:center;border:1px dashed #dfc7c3;
+  border-radius:20px;padding:42px 18px;color:var(--muted);
 }
-
-.letter {
-  max-width: 800px;
-  margin: auto;
-  background: linear-gradient(140deg, #fff, #fff7f3);
-}
-
-footer {
-  text-align: center;
-  padding: 55px 0 25px;
-  color: #9a8282;
-  font-size: .8rem;
-}
-
+.letter { max-width:800px;margin:auto;background:linear-gradient(140deg,#fff,#fff7f3) }
+footer { text-align:center;padding:55px 0 25px;color:#9a8282;font-size:.8rem }
 .lightbox {
-  position: fixed;
-  inset: 0;
-  background: #201518ed;
-  z-index: 9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+  position:fixed;inset:0;background:#201518ed;z-index:50;
+  display:flex;align-items:center;justify-content:center;padding:20px;
+}
+.lightbox img { max-width:95%;max-height:85vh;object-fit:contain }
+.lightbox button { position:absolute;right:18px;top:18px }
+.busy { opacity:.65;pointer-events:none }
+ 
+/* Main navigation */
+.navlinks {
+  display:flex;gap:8px;flex-wrap:wrap;
+  padding:12px 0 18px;
+}
+.navlinks a {
+  text-decoration:none;color:var(--dark);
+  background:#f5e9e5;padding:8px 13px;
+  border-radius:999px;font-size:.82rem;
 }
 
-.lightbox img {
-  max-width: 95%;
-  max-height: 85vh;
-  object-fit: contain;
+/* Feature panels */
+.feature-grid {
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
 }
-
-.lightbox button {
-  position: absolute;
-  right: 18px;
-  top: 18px;
+.feature-card {
+  border:1px solid var(--line);border-radius:20px;
+  padding:22px;background:#fff;
 }
+.feature-card h3 { margin:0 0 12px;font-size:1.45rem }
+.feature-card p { color:var(--muted) }
+.feature-title {
+  display:flex;justify-content:space-between;
+  align-items:center;gap:12px;flex-wrap:wrap;
+}
+.feature-title h3 { margin:0 }
 
-@media (max-width: 740px) {
-  .shell {
-    padding: 0 15px;
-  }
+/* Calendar */
+.calendar {
+  border:1px solid var(--line);border-radius:18px;
+  padding:16px;background:#fff;
+}
+.calendar-head {
+  display:flex;justify-content:space-between;
+  align-items:center;gap:12px;margin-bottom:16px;
+}
+.calendar-head h3 { margin:0;text-align:center }
+.calendar-grid {
+  display:grid;grid-template-columns:repeat(7,minmax(0,1fr));
+  gap:5px;text-align:center;
+}
+.weekday { color:var(--muted);font-size:.72rem;padding:7px 0 }
+.day {
+  min-height:42px;border:1px solid transparent;
+  border-radius:10px;background:#fff8f5;color:var(--ink);
+  position:relative;padding:7px 2px;
+}
+.day.outside { opacity:.35 }
+.day.today { border-color:var(--rose) }
+.day.selected { background:var(--dark);color:#fff }
+.day.has-event:after {
+  content:"";position:absolute;bottom:4px;left:50%;
+  transform:translateX(-50%);width:5px;height:5px;
+  border-radius:50%;background:var(--rose);
+}
+.day.selected.has-event:after { background:white }
+.event-list { display:grid;gap:10px;margin-top:16px }
+.event-item {
+  border:1px solid var(--line);border-radius:14px;
+  padding:13px 15px;background:#fffaf7;
+}
+.event-item h4 { margin:0 0 4px;font-size:.95rem }
+.event-item p { margin:0;color:var(--muted);font-size:.85rem }
 
-  .hero {
-    min-height: 320px;
-    border-radius: 22px;
-  }
+/* Countdown cards */
+.countdown-grid {
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.countdown-card {
+  border:1px solid var(--line);border-radius:18px;
+  background:linear-gradient(145deg,#fff,#f9eae6);
+  padding:20px;
+}
+.count-number {
+  font:2.4rem "Playfair Display";color:var(--dark);
+  line-height:1.2;margin:12px 0 5px;
+}
+.countdown-card h3 { margin:0;font-size:1.2rem }
 
-  .story {
-    grid-template-columns: 1fr;
-  }
+/* Love notes */
+.notes-list,.feelings-list,.timeline-list {
+  display:grid;gap:13px;
+}
+.note-card {
+  background:#fff8f2;border:1px solid #eeddd2;
+  border-radius:16px;padding:19px;
+}
+.note-card:nth-child(even) { background:#f9eeee }
+.note-card p { white-space:pre-wrap;overflow-wrap:anywhere }
+.note-date { color:var(--muted);font-size:.75rem }
 
-  .gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 11px;
-  }
+/* Feelings journal */
+.feeling-card {
+  border:1px solid var(--line);border-radius:16px;
+  padding:18px;background:white;
+}
+.feeling-tag {
+  display:inline-block;padding:4px 9px;
+  border-radius:999px;background:#f5e5e1;
+  color:var(--dark);font-size:.75rem;
+}
+.feeling-card p { white-space:pre-wrap;overflow-wrap:anywhere }
 
-  section {
-    padding-top: 52px;
-  }
+/* Relationship timeline */
+.timeline-item {
+  position:relative;padding:0 0 22px 25px;
+  border-left:2px solid #e8c9c5;margin-left:7px;
+}
+.timeline-item:before {
+  content:"♡";position:absolute;left:-12px;top:0;
+  background:var(--cream);color:var(--rose);
+  padding:0 2px;font-size:1rem;
+}
+.timeline-item h3 { margin:0 0 6px;font-size:1.2rem }
+.timeline-item p { margin:0;color:var(--muted);white-space:pre-wrap }
 
-  .navnote {
-    display: none;
+/* Floating hearts */
+.authwrap { position:relative;overflow:hidden }
+.floating-hearts {
+  position:absolute;inset:0;overflow:hidden;
+  pointer-events:none;z-index:0;
+}
+.floating-heart {
+  position:absolute;bottom:-35px;color:#e88ba8;
+  opacity:0;font-size:22px;
+  animation:floatUp linear forwards;user-select:none;
+}
+.authwrap>.card { position:relative;z-index:1 }
+@keyframes floatUp {
+  0% { transform:translateY(0) rotate(0);opacity:0 }
+  15% { opacity:.65 }
+  85% { opacity:.5 }
+  100% { transform:translateY(-450px) rotate(35deg);opacity:0 }
+}
+@media (prefers-reduced-motion:reduce) {
+  .floating-heart { animation:none;display:none }
   }
+  
+@media (max-width:700px) {
+  .shell { padding:0 15px }
+  header { align-items:flex-start;flex-direction:column }
+  .story,.feature-grid,.uploadgrid { grid-template-columns:1fr }
+  .gallery { grid-template-columns:repeat(2,minmax(0,1fr));gap:10px }
+  .countdown-grid { grid-template-columns:repeat(2,minmax(0,1fr)) }
+  .hero { min-height:330px;padding:27px }
+  .navlinks { gap:6px }
+  .navlinks a { font-size:.75rem;padding:7px 10px }
+  .calendar { padding:9px }
+  .day { min-height:36px;font-size:.82rem }
+}
+@media (max-width:380px) {
+  .gallery,.countdown-grid { grid-template-columns:1fr }
 }
 </style>
 </head>
 <body>
 <div class="shell">
+
 <header>
   <div class="brand">Our Little <span>World ♡</span></div>
-  <div class="navnote muted">a private corner, just for us</div>
+  <div class="muted">a private corner, just for us</div>
 </header>
 
+<nav class="navlinks" aria-label="Main navigation">
+  <a href="#ourStory">Our story</a>
+  <a href="#gallery">Memories</a>
+  <a href="#calendarSection">Calendar</a>
+  <a href="#countdowns">Countdowns</a>
+  <a href="#loveNotes">Love notes</a>
+  <a href="#feelings">Feelings</a>
+  <a href="#timeline">Our timeline</a>
+  <a href="#privateArea">Sign in</a>
+</nav>
+
 <main>
-<div class="hero">
-  <div class="hero-content">
-    <div class="eyebrow">just you, me, and our memories</div>
-    <h1>A little world<br>of <em>our own.</em></h1>
-    <p>For the moments that become stories, the ordinary days that mean everything, and the memories we never want to lose.</p>
-    <div class="date">OUR STORY BEGAN · 22 NOVEMBER 2025</div>
-  </div>
-</div>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="eyebrow">two hearts, one little world</div>
+      <h1>My favourite place<br>is <em>with you.</em></h1>
+      <p>A little home for our memories, our plans, our feelings, and all the small things that make us us.</p>
+      <a class="btn primary" href="#ourStory" style="display:inline-block;text-decoration:none">Our little story ♡</a>
+      <div class="date">OUR STORY BEGAN · 22 NOVEMBER 2025</div>
+    </div>
+  </section>
 
-<section>
-  <div class="sectionhead">
-    <div class="eyebrow">the beginning</div>
-    <h2>Our story, still unfolding.</h2>
-    <p>No grand performance. Just us, choosing each other.</p>
-  </div>
+  <section id="ourStory">
+    <div class="sectionhead">
+      <div class="eyebrow">the beginning of us</div>
+      <h2>One story. Two people.</h2>
+      <p>And so many little moments still waiting to happen.</p>
+    </div>
 
-  <div class="story">
-    <article class="card">
-      <h3>For all the little things</h3>
-      <p>This is our little corner to keep the pictures, the inside jokes, the random days, and the moments that would be easy to forget if we didn't save them.</p>
-      <p>May we keep making a life that feels like home to both of us — one honest conversation and one memory at a time.</p>
-    </article>
+    <div class="story">
+      <div class="card">
+        <h2>Our Little World ♡</h2>
+        <p>This is our little corner of the world. A place to remember the good days, understand each other on the difficult ones, and keep choosing to meet each other with honesty and care.</p>
+        <div class="quote">“It's always us against the problem, never us against each other.”</div>
+      </div>
+      <div class="card counter">
+        <div class="eyebrow">since 22 november 2025</div>
+        <div class="days" id="days">—</div>
+        <div>days of our story ♡</div>
+        <p style="color:#ead8d7">Every day is another page we get to write together.</p>
+      </div>
+    </div>
+  </section>
 
-    <article class="card counter">
-      <div class="eyebrow">since 22 november 2025</div>
-      <div class="days" id="days">—</div>
-      <div class="muted" style="color:#e3ccca">days of our story so far ♡</div>
-    </article>
-  </div>
-
-  <div class="quote">“Somewhere in the middle of ordinary days, you became one of my favourite parts of being alive.”</div>
-</section>
+  <section id="gallery">
+    <div class="sectionhead">
+      <div class="eyebrow">our memories</div>
+      <h2>The little things we keep.</h2>
+      <p>A collection of moments that belong to us.</p>
+    </div>
+    <div id="publicGallery" class="gallery">
+      <div class="empty" style="grid-column:1/-1">Our memories will live here ♡</div>
+    </div>
+  </section>
 </main>
 
-<section id="gallery">
-  <div class="sectionhead">
-    <div class="eyebrow">our memories</div>
-    <h2>The little things we keep.</h2>
-    <p>A collection of moments that belong to us.</p>
-  </div>
+@media (max-width:700px) {
+  .shell { padding:0 15px }
+  header { align-items:flex-start;flex-direction:column }
+  .story,.feature-grid,.uploadgrid { grid-template-columns:1fr }
+  .gallery { grid-template-columns:repeat(2,minmax(0,1fr));gap:10px }
+  .countdown-grid { grid-template-columns:repeat(2,minmax(0,1fr)) }
+  .hero { min-height:330px;padding:27px }
+  .navlinks { gap:6px }
+  .navlinks a { font-size:.75rem;padding:7px 10px }
+  .calendar { padding:9px }
+  .day { min-height:36px;font-size:.82rem }
+}
+@media (max-width:380px) {
+  .gallery,.countdown-grid { grid-template-columns:1fr }
+}
+</style>
+</head>
+<body>
+<div class="shell">
 
-  <div id="publicGallery" class="gallery">
-    <div class="empty" style="grid-column:1/-1">
-      Our memories will live here ♡
+<header>
+  <div class="brand">Our Little <span>World ♡</span></div>
+  <div class="muted">a private corner, just for us</div>
+</header>
+
+<nav class="navlinks" aria-label="Main navigation">
+  <a href="#ourStory">Our story</a>
+  <a href="#gallery">Memories</a>
+  <a href="#calendarSection">Calendar</a>
+  <a href="#countdowns">Countdowns</a>
+  <a href="#loveNotes">Love notes</a>
+  <a href="#feelings">Feelings</a>
+  <a href="#timeline">Our timeline</a>
+  <a href="#privateArea">Sign in</a>
+</nav>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="eyebrow">two hearts, one little world</div>
+      <h1>My favourite place<br>is <em>with you.</em></h1>
+      <p>A little home for our memories, our plans, our feelings, and all the small things that make us us.</p>
+      <a class="btn primary" href="#ourStory" style="display:inline-block;text-decoration:none">Our little story ♡</a>
+      <div class="date">OUR STORY BEGAN · 22 NOVEMBER 2025</div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section id="ourStory">
+    <div class="sectionhead">
+      <div class="eyebrow">the beginning of us</div>
+      <h2>One story. Two people.</h2>
+      <p>And so many little moments still waiting to happen.</p>
+    </div>
+
+    <div class="story">
+      <div class="card">
+        <h2>Our Little World ♡</h2>
+        <p>This is our little corner of the world. A place to remember the good days, understand each other on the difficult ones, and keep choosing to meet each other with honesty and care.</p>
+        <div class="quote">“It's always us against the problem, never us against each other.”</div>
+      </div>
+      <div class="card counter">
+        <div class="eyebrow">since 22 november 2025</div>
+        <div class="days" id="days">—</div>
+        <div>days of our story ♡</div>
+        <p style="color:#ead8d7">Every day is another page we get to write together.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="sectionhead">
+      <div class="eyebrow">our memories</div>
+      <h2>The little things we keep.</h2>
+      <p>A collection of moments that belong to us.</p>
+    </div>
+    <div id="publicGallery" class="gallery">
+      <div class="empty" style="grid-column:1/-1">Our memories will live here ♡</div>
+    </div>
+  </section>
+</main>
 
 <section id="privateArea">
   <div class="sectionhead">
@@ -473,87 +462,243 @@ footer {
   </div>
 
   <div id="authPanel" class="authwrap">
+    <div class="floating-hearts" id="floatingHearts"></div>
     <div class="card">
       <h2 style="text-align:center">Welcome to our world ♡</h2>
+      <p style="text-align:center">A little place that belongs to us.</p>
 
       <div class="field">
         <label for="email">Email address</label>
-        <input id="email" type="email"
-          autocomplete="email" placeholder="Your email">
+        <input id="email" type="email" autocomplete="email" placeholder="Your email">
       </div>
 
       <div class="field">
         <label for="password">Password</label>
-        <input id="password" type="password"
-          autocomplete="current-password" placeholder="Your password">
+        <input id="password" type="password" autocomplete="current-password" placeholder="Your password">
       </div>
 
-      <button id="loginBtn" class="btn primary full" type="button">
-        Sign in ♡
-      </button>
+      <button id="loginBtn" class="btn primary full" type="button">Sign in ♡</button>
+      <button id="signupBtn" class="btn secondary full" type="button" style="margin-top:10px">Create account</button>
+      <button id="resetBtn" class="btn quiet full" type="button">Forgot password?</button>
+      <div id="authMessage" class="notice hidden" role="status"></div>
+    </div>
+  </div>
 
-      <button id="signupBtn" class="btn secondary full"
-        type="button" style="margin-top:10px">
-        Create account
-      </button>
+  <div id="privatePanel" class="hidden">
+    <div class="card">
+      <div class="signedrow">
+        <div>
+          <h3>Our little space ♡</h3>
+          <div id="memberLabel" class="muted"></div>
+        </div>
+        <button id="logoutBtn" class="btn secondary" type="button">Sign out</button>
+      </div>
 
-      <button id="resetBtn" class="btn quiet full"
-        type="button">
-        Forgot password?
-      </button>
+      <div id="privateMessage" class="notice hidden" role="status"></div>
 
-      <div id="authMessage" class="notice hidden"></div>
+      <h3>Save a memory</h3>
+      <div class="uploadgrid">
+        <div class="field">
+          <label for="photoFile">Choose a photo</label>
+          <input id="photoFile" type="file" accept="image/*">
+        </div>
+        <div class="field">
+          <label for="photoCaption">Photo caption</label>
+          <input id="photoCaption" type="text" maxlength="180" placeholder="A memory worth keeping...">
+        </div>
+      </div>
+      <button id="uploadBtn" class="btn primary" type="button">Save memory ♡</button>
+
+      <h3 style="margin-top:30px">Our saved memories</h3>
+      <div id="privateGallery" class="gallery">
+        <div class="empty" style="grid-column:1/-1">Your memories will appear here ♡</div>
+      </div>
     </div>
   </div>
 </section>
 
-<div id="privatePanel" class="hidden">
+<section id="calendarSection">
+  <div class="sectionhead">
+    <div class="eyebrow">plans we make together</div>
+    <h2>Our shared calendar.</h2>
+    <p>Keep track of the little plans and big days that matter to us.</p>
+  </div>
+
   <div class="card">
-    <div class="signedrow">
-      <div>
-        <h3>Our little space ♡</h3>
-        <div id="memberLabel" class="muted"></div>
-      </div>
-      <button id="logoutBtn" class="btn secondary" type="button">
-        Sign out
-      </button>
+    <div class="calendar-head">
+      <button id="prevMonth" class="btn secondary" type="button" aria-label="Previous month">‹</button>
+      <h3 id="calendarMonth">Our calendar</h3>
+      <button id="nextMonth" class="btn secondary" type="button" aria-label="Next month">›</button>
     </div>
-
-    <div id="privateMessage" class="notice hidden"></div>
-
-    <h3>Save a memory</h3>
+    <div id="calendarGrid" class="calendar-grid"></div>
+    <p class="muted">Select a day to plan something together.</p>
 
     <div class="field">
-      <label for="photoFile">Choose a photo</label>
-      <input id="photoFile" type="file" accept="image/*">
+      <label for="eventTitle">Event name</label>
+      <input id="eventTitle" maxlength="100" placeholder="Movie night, date, anniversary...">
     </div>
-
     <div class="field">
-      <label for="photoCaption">Photo caption</label>
-      <input id="photoCaption" type="text"
-        maxlength="180" placeholder="A memory worth keeping...">
+      <label for="eventDate">Date</label>
+      <input id="eventDate" type="date">
     </div>
+    <div class="field">
+      <label for="eventTime">Time (optional)</label>
+      <input id="eventTime" type="time">
+    </div>
+    <div class="field">
+      <label for="eventDescription">Details (optional)</label>
+      <textarea id="eventDescription" rows="3" maxlength="1000" placeholder="What are we planning?"></textarea>
+    </div>
+    <button id="addEventBtn" class="btn primary" type="button">Add to calendar ♡</button>
+    <div id="calendarMessage" class="notice hidden" role="status"></div>
 
-    <button id="uploadBtn" class="btn primary" type="button">
-      Save memory ♡
-    </button>
-
-    <h3>Our saved memories</h3>
-
-    <div id="privateGallery" class="gallery">
-      <div class="empty" style="grid-column:1/-1">
-        Your memories will appear here ♡
-      </div>
+    <h3 style="margin-top:28px">Plans for the selected day</h3>
+    <div id="eventList" class="event-list">
+      <div class="empty">Choose a day to see its plans ♡</div>
     </div>
   </div>
-</div>
+</section>
+
+<section id="countdowns">
+  <div class="sectionhead">
+    <div class="eyebrow">days worth looking forward to</div>
+    <h2>Our special days.</h2>
+    <p>Little reminders of the moments we never want to forget.</p>
+  </div>
+
+  <div class="card">
+    <div id="countdownGrid" class="countdown-grid"></div>
+
+    <h3 style="margin-top:28px">Add a special day</h3>
+    <div class="field">
+      <label for="countdownTitle">Name of the occasion</label>
+      <input id="countdownTitle" maxlength="100" placeholder="Birthday, anniversary, date night...">
+    </div>
+    <div class="field">
+      <label for="countdownDate">Date</label>
+      <input id="countdownDate" type="date">
+    </div>
+    <div class="field">
+      <label for="countdownRepeat">Repeat every year?</label>
+      <select id="countdownRepeat">
+        <option value="no">No, just once</option>
+        <option value="yearly">Yes, every year</option>
+      </select>
+    </div>
+    <button id="addCountdownBtn" class="btn primary" type="button">Save special day ♡</button>
+    <div id="countdownMessage" class="notice hidden" role="status"></div>
+    <div id="countdownManage" class="event-list"></div>
+  </div>
+</section>
+
+<section id="loveNotes">
+  <div class="sectionhead">
+    <div class="eyebrow">words from the heart</div>
+    <h2>Little love notes.</h2>
+    <p>For the things we want to say, even when the moment has passed.</p>
+  </div>
+
+  <div class="card">
+    <div class="field">
+      <label for="noteTitle">A little title</label>
+      <input id="noteTitle" maxlength="100" placeholder="For when you need a smile...">
+    </div>
+    <div class="field">
+      <label for="noteText">Your message</label>
+      <textarea id="noteText" rows="5" maxlength="3000" placeholder="Write something from your heart..."></textarea>
+    </div>
+    <button id="saveNoteBtn" class="btn primary" type="button">Keep this note ♡</button>
+    <div id="notesMessage" class="notice hidden" role="status"></div>
+
+    <h3 style="margin-top:30px">Notes to remember</h3>
+    <div id="notesList" class="notes-list">
+      <div class="empty">Your little notes will live here ♡</div>
+    </div>
+  </div>
+</section>
+
+<section id="feelings">
+  <div class="sectionhead">
+    <div class="eyebrow">honesty with tenderness</div>
+    <h2>How are we really feeling?</h2>
+    <p>A place to express ourselves, listen without judgement, and understand each other better.</p>
+  </div>
+
+  <div class="card">
+    <div class="field">
+      <label for="feelingMood">How are you feeling?</label>
+      <select id="feelingMood">
+        <option value="Happy">Happy</option>
+        <option value="Loved">Loved</option>
+        <option value="Calm">Calm</option>
+        <option value="Worried">Worried</option>
+        <option value="Hurt">Hurt</option>
+        <option value="Overwhelmed">Overwhelmed</option>
+        <option value="Disconnected">Disconnected</option>
+        <option value="Unsure">Unsure</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="feelingText">What's on your mind?</label>
+      <textarea id="feelingText" rows="5" maxlength="3000" placeholder="What happened, how did it make you feel, and what would help?"></textarea>
+    </div>
+    <div class="field">
+      <label for="feelingNeed">What do you need from your partner?</label>
+      <textarea id="feelingNeed" rows="3" maxlength="1500" placeholder="Listening, reassurance, space, an apology, a solution..."></textarea>
+    </div>
+    <button id="saveFeelingBtn" class="btn primary" type="button">Save how I feel ♡</button>
+    <div id="feelingsMessage" class="notice hidden" role="status"></div>
+
+    <h3 style="margin-top:30px">Our reflections</h3>
+    <div id="feelingsList" class="feelings-list">
+      <div class="empty">A space for honest conversations ♡</div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="sectionhead">
+    <div class="eyebrow">the chapters of us</div>
+    <h2>Our little timeline.</h2>
+    <p>The moments that brought us here and the memories still ahead.</p>
+  </div>
+
+  <div class="card">
+    <div class="quote">
+      Every relationship is a story still being written. These are our chapters. ♡
+    </div>
+
+    <h3 style="margin-top:28px">Add a milestone</h3>
+    <div class="field">
+      <label for="milestoneTitle">What happened?</label>
+      <input id="milestoneTitle" maxlength="100" placeholder="Our first date, a special moment...">
+    </div>
+
+    <div class="field">
+      <label for="milestoneDate">When did it happen?</label>
+      <input id="milestoneDate" type="date">
+    </div>
+
+    <div class="field">
+      <label for="milestoneDescription">Tell the story</label>
+      <textarea id="milestoneDescription" rows="4" maxlength="2000" placeholder="Why does this moment matter to us?"></textarea>
+    </div>
+
+    <button id="addMilestoneBtn" class="btn primary" type="button">Add to our story ♡</button>
+    <div id="timelineMessage" class="notice hidden" role="status"></div>
+
+    <h3 style="margin-top:30px">Our chapters</h3>
+    <div id="timelineList" class="timeline-list">
+      <div class="empty">Our story is still unfolding ♡</div>
+    </div>
+  </div>
+</section>
 
 <section>
   <div class="card letter">
     <div class="eyebrow">a little reminder</div>
     <h2>It's always us against the problem.</h2>
     <p>We won't always understand each other perfectly. What matters is that we keep talking, listening, and remembering that we're on the same team.</p>
-
     <div class="quote">
       “Love is not about never getting things wrong.
       It's about being willing to make things right.” ♡
@@ -561,419 +706,581 @@ footer {
   </div>
 </section>
 
-<footer>Made with love, for our little world ♡</footer>
+<footer>
+  Made with love, for our little world ♡
+  <div class="small">Our story began on 22 November 2025.</div>
+</footer>
 
-<div id="lightbox" class="lightbox hidden"
-  role="dialog" aria-modal="true">
-  <button id="closeLightbox" class="btn secondary"
-    type="button">Close ✕</button>
+<div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button id="closeLightbox" class="btn secondary" type="button">Close ✕</button>
   <img id="lightboxImage" src="" alt="Our memory">
 </div>
+</div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-(() => {
-  "use strict";
+"use strict";
 
-  const SUPABASE_URL =
-    "https://tyrxoctwclklndzixyvf.supabase.co";
+const $ = id => document.getElementById(id);
+const START_DATE = "2025-11-22";
 
-  const SUPABASE_KEY =
-    "sb_publishable_B0LsNX1lh_IDdoOELbTTPQ_LFfX5SQb";
+function showMessage(id, text, type = "info") {
+  const el = $(id);
+  if (!el) return;
+  el.textContent = text;
+  el.className = "notice " + type;
+}
 
-  const BUCKET = "our-little-world";
+function clearMessage(id) {
+  const el = $(id);
+  if (!el) return;
+  el.textContent = "";
+  el.className = "notice hidden";
+}
 
-  const db = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
+function readStore(key) {
+  try {
+    return JSON.parse(localStorage.getItem(key) || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function writeStore(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
+function makeId() {
+  return Date.now().toString(36) +
+    Math.random().toString(36).slice(2, 8);
+}
+
+function safeText(tag, className, text) {
+  const el = document.createElement(tag);
+  if (className) el.className = className;
+  el.textContent = text || "";
+  return el;
+}
+
+/* Relationship day counter */
+function updateRelationshipDays() {
+  const start = new Date(START_DATE + "T00:00:00");
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const days = Math.floor((today - start) / 86400000) + 1;
+  $("days").textContent = days > 0 ? days : "Soon ♡";
+}
+
+/* Floating hearts */
+function startFloatingHearts() {
+  const area = $("floatingHearts");
+  if (!area || window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches) return;
+
+  function addHeart() {
+    if (!area.isConnected || area.clientWidth === 0) return;
+
+    const heart = document.createElement("span");
+    heart.className = "floating-heart";
+    heart.textContent = ["♡", "♥", "💕", "♡"][
+      Math.floor(Math.random() * 4)
+    ];
+    heart.style.left = Math.random() * 92 + "%";
+    heart.style.fontSize = (14 + Math.random() * 15) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+    area.appendChild(heart);
+    heart.addEventListener("animationend", () => heart.remove());
+  }
+
+  for (let i = 0; i < 5; i++) {
+    setTimeout(addHeart, i * 500);
+  }
+
+  setInterval(addHeart, 900);
+}
+
+/* Calendar */
+let calendarView = new Date();
+let selectedDate = localDateString(new Date());
+
+function localDateString(date) {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+}
+
+function renderCalendar() {
+  const grid = $("calendarGrid");
+  const title = $("calendarMonth");
+  if (!grid || !title) return;
+
+  grid.innerHTML = "";
+
+  title.textContent = calendarView.toLocaleDateString(
+    undefined,
+    { month: "long", year: "numeric" }
   );
 
-  const $ = id => document.getElementById(id);
+  ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    .forEach(day => grid.appendChild(
+      safeText("div", "weekday", day)
+    ));
 
-  function message(id, text, type = "info") {
-    const el = $(id);
-    el.textContent = text;
-    el.className = "notice " + type;
-  }
+  const year = calendarView.getFullYear();
+  const month = calendarView.getMonth();
+  const firstDay = new Date(year, month, 1);
+  const offset = (firstDay.getDay() + 6) % 7;
+  const start = new Date(year, month, 1 - offset);
+  const events = readStore("olw_events");
 
-  function hideMessage(id) {
-    const el = $(id);
-    el.textContent = "";
-    el.classList.add("hidden");
-  }
-  
-  $("loginBtn").addEventListener("click", async () => {
-    hideMessage("authMessage");
+  for (let i = 0; i < 42; i++) {
+    const date = new Date(start);
+    date.setDate(start.getDate() + i);
+    const key = localDateString(date);
+    const hasEvent = events.some(event => event.date === key);
 
-    const email = $("email").value.trim();
-    const password = $("password").value;
+    const button = safeText("button", "day", date.getDate());
+    button.type = "button";
 
-    if (!email || !password) {
-      message(
-        "authMessage",
-        "Enter your email and password.",
-        "error"
-      );
-      return;
-    }
+    if (date.getMonth() !== month) button.classList.add("outside");
+    if (key === localDateString(new Date())) button.classList.add("today");
+    if (key === selectedDate) button.classList.add("selected");
+    if (hasEvent) button.classList.add("has-event");
 
-    const { error } = await db.auth.signInWithPassword({
-      email,
-      password
+    button.setAttribute("aria-label", key);
+    button.addEventListener("click", () => {
+      selectedDate = key;
+      $("eventDate").value = key;
+      renderCalendar();
+      renderEvents();
     });
 
-    if (error) {
-      message("authMessage", error.message, "error");
-      return;
-    }
-
-    await updateSession();
-  });
-
-  $("signupBtn").addEventListener("click", async () => {
-    hideMessage("authMessage");
-
-    const email = $("email").value.trim();
-    const password = $("password").value;
-
-    if (!email || !password) {
-      message(
-        "authMessage",
-        "Enter your email and password.",
-        "error"
-      );
-      return;
-    }
-
-    if (password.length < 6) {
-      message(
-        "authMessage",
-        "Your password must be at least 6 characters.",
-        "error"
-      );
-      return;
-    }
-
-    const { error } = await db.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo:
-          "https://huffy212.github.io/Our-little-world-/"
-      }
-    });
-
-    if (error) {
-      message("authMessage", error.message, "error");
-      return;
-    }
-
-    message(
-      "authMessage",
-      "Check your email for the verification link.",
-      "success"
-    );
-  });
-  
-  $("resetBtn").addEventListener("click", async () => {
-    hideMessage("authMessage");
-
-    const email = $("email").value.trim();
-
-    if (!email) {
-      message(
-        "authMessage",
-        "Enter your email address first.",
-        "error"
-      );
-      return;
-    }
-
-    const { error } = await db.auth.resetPasswordForEmail(
-      email,
-      {
-        redirectTo:
-          "https://huffy212.github.io/Our-little-world-/"
-      }
-    );
-
-    if (error) {
-      message("authMessage", error.message, "error");
-      return;
-    }
-
-    message(
-      "authMessage",
-      "If the account exists, a password reset link will be sent to your email.",
-      "success"
-    );
-  });
-  
-  async function updateSession() {
-    const {
-      data: { session },
-      error
-    } = await db.auth.getSession();
-
-    if (error) {
-      message("authMessage", error.message, "error");
-      return;
-    }
-
-    const signedIn = !!session;
-
-    $("authPanel").classList.toggle(
-      "hidden",
-      signedIn
-    );
-
-    $("privatePanel").classList.toggle(
-      "hidden",
-      !signedIn
-    );
-
-    if (signedIn) {
-      $("memberLabel").textContent =
-        session.user.email || "Signed in";
-
-      await loadPrivateGallery();
-    }
-        }
-  
-  $("logoutBtn").addEventListener("click", async () => {
-    const { error } = await db.auth.signOut();
-
-    if (error) {
-      message("privateMessage", error.message, "error");
-      return;
-    }
-
-    $("privateGallery").innerHTML = `
-      <div class="empty" style="grid-column:1/-1">
-        Your memories will appear here ♡
-      </div>
-    `;
-
-    $("photoFile").value = "";
-    $("photoCaption").value = "";
-
-    await updateSession();
-  });
-
-  db.auth.onAuthStateChange(() => {
-    setTimeout(() => {
-      updateSession();
-    }, 0);
-  });
-  
-  async function loadPrivateGallery() {
-    const {
-      data: { user },
-      error: userError
-    } = await db.auth.getUser();
-
-    if (userError || !user) return;
-
-    const { data, error } = await db
-      .from("gallery_photos")
-      .select("*")
-      .eq("user_id", user.id)
-      .order("created_at", { ascending: false });
-
-    if (error) {
-      message("privateMessage", error.message, "error");
-      return;
-    }
-
-    const gallery = $("privateGallery");
-    gallery.innerHTML = "";
-
-    if (!data || data.length === 0) {
-      gallery.innerHTML = `
-        <div class="empty" style="grid-column:1/-1">
-          Your memories will appear here ♡
-        </div>
-      `;
-      return;
-    }
-
-    data.forEach(photo => {
-      const card = document.createElement("div");
-      card.className = "photo";
-
-      const image = document.createElement("img");
-      image.alt = photo.caption || "Our memory";
-
-      const caption = document.createElement("div");
-      caption.className = "caption";
-      caption.textContent = photo.caption || "A little memory ♡";
-
-      card.appendChild(image);
-      card.appendChild(caption);
-      gallery.appendChild(card);
-
-      image.src = photo.photo_url;
-    });
-        }
-  
-  $("uploadBtn").addEventListener("click", async () => {
-    hideMessage("privateMessage");
-
-    const file = $("photoFile").files[0];
-    const caption = $("photoCaption").value.trim();
-
-    if (!file) {
-      message(
-        "privateMessage",
-        "Choose a photo first.",
-        "error"
-      );
-      return;
-    }
-
-    const {
-      data: { user },
-      error: userError
-    } = await db.auth.getUser();
-
-    if (userError || !user) {
-      message(
-        "privateMessage",
-        "Please sign in again.",
-        "error"
-      );
-      return;
-    }
-
-    const filePath =
-      user.id + "/" + Date.now() + "-" +
-      file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
-
-    const { error: uploadError } = await db.storage
-      .from(BUCKET)
-      .upload(filePath, file, {
-        upsert: false
-      });
-
-    if (uploadError) {
-      message(
-        "privateMessage",
-        uploadError.message,
-        "error"
-      );
-      return;
-    }
-
-    const { data: urlData } = db.storage
-      .from(BUCKET)
-      .getPublicUrl(filePath);
-
-    const { error: saveError } = await db
-      .from("gallery_photos")
-      .insert({
-        user_id: user.id,
-        caption: caption,
-        photo_url: urlData.publicUrl
-      });
-
-    if (saveError) {
-      message(
-        "privateMessage",
-        "Photo uploaded, but saving its details failed: " +
-        saveError.message,
-        "error"
-      );
-      return;
-    }
-
-    $("photoFile").value = "";
-    $("photoCaption").value = "";
-
-    message(
-      "privateMessage",
-      "Your memory has been saved ♡",
-      "success"
-    );
-
-    await loadPrivateGallery();
-  });
-  
-  async function loadPublicGallery() {
-    const gallery = $("publicGallery");
-
-    const { data, error } = await db
-      .from("gallery_photos")
-      .select("caption, photo_url, created_at")
-      .order("created_at", { ascending: false });
-
-    if (error) {
-      gallery.innerHTML = `
-        <div class="empty" style="grid-column:1/-1">
-          Our memories will live here ♡
-        </div>
-      `;
-      return;
-    }
-
-    gallery.innerHTML = "";
-
-    if (!data || data.length === 0) {
-      gallery.innerHTML = `
-        <div class="empty" style="grid-column:1/-1">
-          Our memories will live here ♡
-        </div>
-      `;
-      return;
-    }
-
-    data.forEach(photo => {
-      const card = document.createElement("div");
-      card.className = "photo";
-
-      const frame = document.createElement("div");
-      frame.className = "frame";
-
-      const image = document.createElement("img");
-      image.src = photo.photo_url;
-      image.alt = photo.caption || "Our memory";
-      image.loading = "lazy";
-
-      image.addEventListener("click", () => {
-        $("lightboxImage").src = photo.photo_url;
-        $("lightbox").classList.remove("hidden");
-      });
-
-      const caption = document.createElement("div");
-      caption.className = "caption";
-      caption.textContent =
-        photo.caption || "A little memory ♡";
-
-      frame.appendChild(image);
-      card.appendChild(frame);
-      card.appendChild(caption);
-      gallery.appendChild(card);
-    });
-  }
-  
-  $("closeLightbox").addEventListener("click", () => {
-    $("lightbox").classList.add("hidden");
-    $("lightboxImage").src = "";
-  });
-
-  $("lightbox").addEventListener("click", event => {
-    if (event.target === $("lightbox")) {
-      $("lightbox").classList.add("hidden");
-      $("lightboxImage").src = "";
-    }
-  });
-
-  async function initializeWebsite() {
-    await loadPublicGallery();
-    await updateSession();
+    grid.appendChild(button);
   }
 
-  initializeWebsite();
-})();
+  renderEvents();
+}
+
+function renderEvents() {
+  const list = $("eventList");
+  if (!list) return;
+
+  list.innerHTML = "";
+  const events = readStore("olw_events")
+    .filter(event => event.date === selectedDate)
+    .sort((a, b) => (a.time || "").localeCompare(b.time || ""));
+
+  if (!events.length) {
+    list.appendChild(safeText(
+      "div", "empty", "No plans saved for this day ♡"
+    ));
+    return;
+  }
+
+  events.forEach(event => {
+    const card = document.createElement("div");
+    card.className = "event-item";
+
+    const heading = safeText(
+      "h4", "", event.title
+    );
+    const details = safeText(
+      "p", "",
+      [event.time, event.description].filter(Boolean).join(" · ")
+    );
+    const remove = safeText("button", "btn danger", "Delete");
+    remove.type = "button";
+    remove.addEventListener("click", () => {
+      writeStore("olw_events",
+        readStore("olw_events").filter(item => item.id !== event.id)
+      );
+      renderCalendar();
+    });
+
+    card.append(heading, details, remove);
+    list.appendChild(card);
+  });
+}
+
+$("prevMonth").addEventListener("click", () => {
+  calendarView.setMonth(calendarView.getMonth() - 1);
+  renderCalendar();
+});
+
+$("nextMonth").addEventListener("click", () => {
+  calendarView.setMonth(calendarView.getMonth() + 1);
+  renderCalendar();
+});
+
+$("eventDate").value = selectedDate;
+
+$("addEventBtn").addEventListener("click", () => {
+  clearMessage("calendarMessage");
+
+  const title = $("eventTitle").value.trim();
+  const date = $("eventDate").value;
+
+  if (!title || !date) {
+    showMessage(
+      "calendarMessage",
+      "Enter an event name and date.",
+      "error"
+    );
+    return;
+  }
+
+  const events = readStore("olw_events");
+  events.push({
+    id: makeId(),
+    title,
+    date,
+    time: $("eventTime").value,
+    description: $("eventDescription").value.trim()
+  });
+
+  writeStore("olw_events", events);
+  selectedDate = date;
+  calendarView = new Date(date + "T12:00:00");
+
+  $("eventTitle").value = "";
+  $("eventTime").value = "";
+  $("eventDescription").value = "";
+
+  showMessage(
+    "calendarMessage",
+    "Your event is saved on this device ♡",
+    "success"
+  );
+
+  renderCalendar();
+});
+
+updateRelationshipDays();
+renderCalendar();
+startFloatingHearts();
+ 
+/* Special-day countdowns */
+function nextOccurrence(date, yearly) {
+  const now = new Date();
+  now.setHours(0, 0, 0, 0);
+
+  let target = new Date(date + "T00:00:00");
+
+  if (yearly) {
+    target.setFullYear(now.getFullYear());
+    if (target < now) target.setFullYear(now.getFullYear() + 1);
+  }
+
+  return target;
+}
+
+function renderCountdowns() {
+  const grid = $("countdownGrid");
+  const manage = $("countdownManage");
+  const items = readStore("olw_countdowns");
+
+  grid.innerHTML = "";
+  manage.innerHTML = "";
+
+  if (!items.length) {
+    grid.appendChild(safeText(
+      "div", "empty", "Add a special day to start counting down ♡"
+    ));
+  }
+
+  items.forEach(item => {
+    const target = nextOccurrence(item.date, item.yearly);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const days = Math.round((target - today) / 86400000);
+
+    const card = document.createElement("div");
+    card.className = "countdown-card";
+    card.append(
+      safeText("h3", "", item.title),
+      safeText(
+        "div", "count-number",
+        days === 0 ? "Today ♡" : `${days} day${days === 1 ? "" : "s"}`
+      ),
+      safeText(
+        "div", "small",
+        item.yearly ? "Repeats every year" : item.date
+      )
+    );
+    grid.appendChild(card);
+
+    const row = document.createElement("div");
+    row.className = "event-item";
+    row.append(
+      safeText("h4", "", `${item.title} · ${item.date}`),
+      safeText(
+        "p", "",
+        item.yearly ? "Annual occasion" : "One-time occasion"
+      )
+    );
+
+    const remove = safeText("button", "btn danger", "Delete");
+    remove.type = "button";
+    remove.addEventListener("click", () => {
+      writeStore(
+        "olw_countdowns",
+        readStore("olw_countdowns").filter(x => x.id !== item.id)
+      );
+      renderCountdowns();
+    });
+
+    row.appendChild(remove);
+    manage.appendChild(row);
+  });
+}
+
+$("addCountdownBtn").addEventListener("click", () => {
+  const title = $("countdownTitle").value.trim();
+  const date = $("countdownDate").value;
+
+  if (!title || !date) {
+    showMessage(
+      "countdownMessage",
+      "Enter an occasion name and date.",
+      "error"
+    );
+    return;
+  }
+
+  const items = readStore("olw_countdowns");
+  items.push({
+    id: makeId(),
+    title,
+    date,
+    yearly: $("countdownRepeat").value === "yearly"
+  });
+
+  writeStore("olw_countdowns", items);
+  $("countdownTitle").value = "";
+  $("countdownDate").value = "";
+
+  showMessage(
+    "countdownMessage",
+    "Your special day has been saved ♡",
+    "success"
+  );
+  renderCountdowns();
+});
+
+/* Love notes */
+function renderNotes() {
+  const list = $("notesList");
+  list.innerHTML = "";
+  const items = readStore("olw_notes");
+
+  if (!items.length) {
+    list.appendChild(safeText(
+      "div", "empty", "Your little notes will live here ♡"
+    ));
+    return;
+  }
+
+  items.slice().reverse().forEach(item => {
+    const card = document.createElement("div");
+    card.className = "note-card";
+    card.append(
+      safeText("div", "note-date", item.date),
+      safeText("h3", "", item.title || "A little love note"),
+      safeText("p", "", item.text)
+    );
+
+    const remove = safeText("button", "btn danger", "Delete");
+    remove.type = "button";
+    remove.addEventListener("click", () => {
+      writeStore(
+        "olw_notes",
+        readStore("olw_notes").filter(x => x.id !== item.id)
+      );
+      renderNotes();
+    });
+
+    card.appendChild(remove);
+    list.appendChild(card);
+  });
+}
+
+$("saveNoteBtn").addEventListener("click", () => {
+  const title = $("noteTitle").value.trim();
+  const text = $("noteText").value.trim();
+
+  if (!text) {
+    showMessage("notesMessage", "Write your message first.", "error");
+    return;
+  }
+
+  const items = readStore("olw_notes");
+  items.push({
+    id: makeId(),
+    title,
+    text,
+    date: new Date().toLocaleString()
+  });
+
+  writeStore("olw_notes", items);
+  $("noteTitle").value = "";
+  $("noteText").value = "";
+
+  showMessage("notesMessage", "Your note is saved ♡", "success");
+  renderNotes();
+});
+
+/* Feelings journal */
+function renderFeelings() {
+  const list = $("feelingsList");
+  list.innerHTML = "";
+  const items = readStore("olw_feelings");
+
+  if (!items.length) {
+    list.appendChild(safeText(
+      "div", "empty", "A space for honest conversations ♡"
+    ));
+    return;
+  }
+
+  items.slice().reverse().forEach(item => {
+    const card = document.createElement("div");
+    card.className = "feeling-card";
+
+    card.append(
+      safeText("div", "note-date", item.date),
+      safeText("span", "feeling-tag", item.mood),
+      safeText("p", "", item.text),
+      safeText(
+        "p", "",
+        "What I need: " + (item.need || "Not specified")
+      )
+    );
+
+    const remove = safeText("button", "btn danger", "Delete");
+    remove.type = "button";
+    remove.addEventListener("click", () => {
+      writeStore(
+        "olw_feelings",
+        readStore("olw_feelings").filter(x => x.id !== item.id)
+      );
+      renderFeelings();
+    });
+
+    card.appendChild(remove);
+    list.appendChild(card);
+  });
+}
+
+$("saveFeelingBtn").addEventListener("click", () => {
+  const text = $("feelingText").value.trim();
+  const need = $("feelingNeed").value.trim();
+
+  if (!text) {
+    showMessage(
+      "feelingsMessage",
+      "Write a little about how you're feeling first.",
+      "error"
+    );
+    return;
+  }
+
+  const items = readStore("olw_feelings");
+  items.push({
+    id: makeId(),
+    mood: $("feelingMood").value,
+    text,
+    need,
+    date: new Date().toLocaleString()
+  });
+
+  writeStore("olw_feelings", items);
+  $("feelingText").value = "";
+  $("feelingNeed").value = "";
+
+  showMessage(
+    "feelingsMessage",
+    "Your reflection is saved on this device ♡",
+    "success"
+  );
+  renderFeelings();
+});
+
+/* Relationship timeline */
+function renderTimeline() {
+  const list = $("timelineList");
+  list.innerHTML = "";
+  const items = readStore("olw_timeline")
+    .sort((a, b) => b.date.localeCompare(a.date));
+
+  if (!items.length) {
+    list.appendChild(safeText(
+      "div", "empty", "Our story is still unfolding ♡"
+    ));
+    return;
+  }
+
+  items.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "timeline-item";
+    card.append(
+      safeText("div", "note-date", item.date),
+      safeText("h3", "", item.title),
+      safeText("p", "", item.description)
+    );
+
+    const remove = safeText("button", "btn danger", "Delete");
+    remove.type = "button";
+    remove.style.marginTop = "10px";
+    remove.addEventListener("click", () => {
+      writeStore(
+        "olw_timeline",
+        readStore("olw_timeline").filter(x => x.id !== item.id)
+      );
+      renderTimeline();
+    });
+
+    card.appendChild(remove);
+    list.appendChild(card);
+  });
+}
+
+$("addMilestoneBtn").addEventListener("click", () => {
+  const title = $("milestoneTitle").value.trim();
+  const date = $("milestoneDate").value;
+  const description = $("milestoneDescription").value.trim();
+
+  if (!title || !date) {
+    showMessage(
+      "timelineMessage",
+      "Enter the milestone name and date.",
+      "error"
+    );
+    return;
+  }
+
+  const items = readStore("olw_timeline");
+  items.push({ id: makeId(), title, date, description });
+  writeStore("olw_timeline", items);
+
+  $("milestoneTitle").value = "";
+  $("milestoneDate").value = "";
+  $("milestoneDescription").value = "";
+
+  showMessage("timelineMessage", "Milestone added ♡", "success");
+  renderTimeline();
+});
+
+/* Initial rendering */
+renderCountdowns();
+renderNotes();
+renderFeelings();
+renderTimeline();
+
+/* Close the JavaScript and HTML document */
 </script>
 </body>
 </html>
+  
