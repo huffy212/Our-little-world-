@@ -1,824 +1,197 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#fff8f5">
-  <meta name="description" content="Our Little World — a little corner of the internet made for Huffy and Liora.">
-  <title>Our Little World ♡</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --cream: #fff8f5;
-      --pink: #f4d9dc;
-      --rose: #b66c79;
-      --dark: #35252b;
-      --muted: #806e73;
-      --white: #ffffff;
-      --line: #eadcdd;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 85px;
-    }
-
-    body {
-      background: var(--cream);
-      color: var(--dark);
-      font-family: "DM Sans", sans-serif;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      padding: 17px 7%;
-      background: rgba(255, 248, 245, 0.94);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(12px);
-    }
-
-    .logo {
-      font-family: "Playfair Display", serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-
-    .logo span {
-      color: var(--rose);
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 22px;
-      font-size: 0.83rem;
-      color: var(--muted);
-    }
-
-    .nav-links a:hover {
-      color: var(--rose);
-    }
-
-    .hero {
-      min-height: 88vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 75px 22px;
-      position: relative;
-      background:
-        radial-gradient(ellipse at 15% 20%, #f7e4e4 0, transparent 38%),
-        radial-gradient(ellipse at 85% 75%, #f4e8dc 0, transparent 38%),
-        var(--cream);
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 0.68rem;
-      color: var(--rose);
-      font-weight: 700;
-      margin-bottom: 22px;
-    }
-
-    .hero h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(3.1rem, 9vw, 6.4rem);
-      font-weight: 400;
-      line-height: 1.08;
-      max-width: 900px;
-    }
-
-    .hero h1 em {
-      color: var(--rose);
-      font-weight: 400;
-    }
-
-    .hero p {
-      max-width: 440px;
-      margin: 24px auto 30px;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .handwritten {
-      font-family: "Caveat", cursive;
-      font-size: 1.8rem;
-      color: var(--rose);
-    }
-
-    .button {
-      display: inline-block;
-      border: 1px solid var(--rose);
-      background: var(--rose);
-      color: white;
-      padding: 13px 24px;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      transition: 0.25s;
-      cursor: pointer;
-    }
-
-    .button:hover {
-      background: transparent;
-      color: var(--rose);
-      transform: translateY(-2px);
-    }
-
-    .hero-heart {
-      margin-top: 38px;
-      color: var(--rose);
-      font-size: 1.5rem;
-      animation: heartbeat 1.8s infinite;
-    }
-
-    @keyframes heartbeat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.16); }
-    }
-
-    section {
-      padding: 90px 7%;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 42px;
-    }
-
-    .section-heading .eyebrow {
-      margin-bottom: 10px;
-    }
-
-    .section-heading h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(2.1rem, 5vw, 3.5rem);
-      font-weight: 400;
-      line-height: 1.2;
-    }
-
-    .section-heading p {
-      max-width: 520px;
-      margin: 14px auto 0;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .story {
-      background: white;
-    }
-
-    .story-content {
-      max-width: 760px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .story-content p {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .story-content .big-letter {
-      font-family: "Playfair Display", serif;
-      font-size: 1.3rem;
-      color: var(--dark);
-      line-height: 1.9;
-    }
-
-    .gallery {
-      background: var(--cream);
-    }
-
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .photo-card {
-      grid-column: span 2;
-      background: white;
-      padding: 10px 10px 16px;
-      border: 1px solid #f0e6e5;
-      border-radius: 5px;
-      box-shadow: 0 8px 24px rgba(75, 42, 48, 0.06);
-      transition: transform 0.25s, box-shadow 0.25s;
-      cursor: pointer;
-      min-width: 0;
-    }
-
-    .photo-card:nth-child(4) {
-      grid-column: 2 / span 2;
-    }
-
-    .photo-card:hover {
-      transform: translateY(-5px) rotate(-0.5deg);
-      box-shadow: 0 12px 30px rgba(75, 42, 48, 0.12);
-    }
-
-    .photo-card img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      display: block;
-      background: #f1e5e5;
-      border-radius: 3px;
-    }
-
-    .photo-caption {
-      text-align: center;
-      font-family: "Caveat", cursive;
-      font-size: 1.4rem;
-      color: var(--muted);
-      padding-top: 10px;
-    }
-
-    .anniversary {
-      text-align: center;
-      color: white;
-      background: #493139;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .anniversary .eyebrow {
-      color: #e6b7bf;
-    }
-
-    .anniversary .section-heading h2 {
-      color: white;
-    }
-
-    .anniversary .section-heading p {
-      color: #e3d2d6;
-    }
-
-    .counter {
-      display: flex;
-      justify-content: center;
-      gap: clamp(12px, 4vw, 40px);
-      flex-wrap: wrap;
-      margin: 42px auto 25px;
-    }
-
-    .counter-item {
-      min-width: 75px;
-    }
-
-    .counter-number {
-      display: block;
-      font-family: "Playfair Display", serif;
-      font-size: clamp(2.3rem, 6vw, 4rem);
-      line-height: 1.2;
-      color: #f2c8ce;
-    }
-
-    .counter-label {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.67rem;
-      color: #e3d2d6;
-    }
-
-    .anniversary-note {
-      font-family: "Caveat", cursive;
-      font-size: 1.8rem;
-      color: #f2c8ce;
-    }
-
-    .letter {
-      background: white;
-    }
-
-    .letter-paper {
-      max-width: 740px;
-      margin: auto;
-      padding: clamp(25px, 6vw, 55px);
-      background: #fffaf6;
-      border: 1px solid #eadbd8;
-      box-shadow: 0 12px 40px rgba(75, 42, 48, 0.05);
-      position: relative;
-    }
-
-    .letter-paper::before {
-      content: "♡";
-      position: absolute;
-      top: 12px;
-      right: 22px;
-      font-size: 2rem;
-      color: #d9a2ac;
-    }
-
-    .letter-paper h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 1.9rem;
-      font-weight: 400;
-      margin-bottom: 24px;
-    }
-
-    .letter-paper p {
-      color: var(--muted);
-      margin-bottom: 17px;
-    }
-
-    .signature {
-      font-family: "Caveat", cursive;
-      font-size: 2rem;
-      color: var(--rose);
-      margin-top: 25px;
-    }
-
-    .quote-section {
-      text-align: center;
-      background: #f7e9e8;
-      padding-top: 75px;
-      padding-bottom: 75px;
-    }
-
-    .quote-mark {
-      font-family: "Playfair Display", serif;
-      color: var(--rose);
-      font-size: 4rem;
-      line-height: 0.8;
-    }
-
-    blockquote {
-      max-width: 760px;
-      margin: 15px auto;
-      font-family: "Playfair Display", serif;
-      font-style: italic;
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
-      line-height: 1.5;
-    }
-
-    .quote-credit {
-      color: var(--muted);
-      font-size: 0.82rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 35px 20px;
-      background: var(--cream);
-    }
-
-    footer p {
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
-
-    footer .footer-title {
-      font-family: "Playfair Display", serif;
-      font-size: 1.25rem;
-      color: var(--dark);
-      margin-bottom: 7px;
-    }
-
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(25, 15, 19, 0.92);
-      z-index: 100;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .lightbox.open {
-      display: flex;
-    }
-
-    .lightbox img {
-      display: block;
-      max-width: 100%;
-      max-height: 85vh;
-      object-fit: contain;
-      border-radius: 4px;
-    }
-
-    .close-lightbox {
-      position: absolute;
-      top: 16px;
-      right: 22px;
-      background: transparent;
-      border: none;
-      color: white;
-      font-size: 2.5rem;
-      cursor: pointer;
-      line-height: 1;
-    }
-
-    .top-link {
-      display: inline-block;
-      margin-top: 12px;
-      color: var(--rose);
-    }
-
-    @media (max-width: 650px) {
-      .nav {
-        padding: 14px 5%;
-      }
-
-      .nav-links {
-        gap: 11px;
-        font-size: 0.74rem;
-      }
-
-      .logo {
-        font-size: 1rem;
-        white-space: nowrap;
-      }
-
-      .hero {
-        min-height: 78vh;
-      }
-
-      section {
-        padding: 70px 5%;
-      }
-
-      .photo-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .photo-card,
-      .photo-card:nth-child(4) {
-        grid-column: auto;
-      }
-
-      .photo-card:last-child {
-        grid-column: 1 / -1;
-        width: calc(50% - 6px);
-        justify-self: center;
-      }
-
-      .photo-card img {
-        height: 220px;
-      }
-
-      .counter {
-        gap: 22px;
-      }
-
-      .counter-item {
-        min-width: 65px;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .photo-card img {
-        height: 175px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        animation: none !important;
-        transition: none !important;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f8eee9">
+<title>Our Little World ♡</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#392b2c;--muted:#806b6c;--rose:#b96f79;--dark:#8f4d59;--cream:#fffaf7;--line:#eadbd6;--blush:#f5e5e1}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.65 "DM Sans",sans-serif}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+.shell{max-width:1120px;margin:auto;padding:0 22px}
+header{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+.brand{font:600 1.4rem "Playfair Display",serif}
+.brand span{color:var(--rose)}
+.muted{color:var(--muted);font-size:.9rem}
+.hero{padding:clamp(32px,7vw,82px);border-radius:28px;background:linear-gradient(135deg,#f3dfdc,#fff5ef 60%,#efe1dc);position:relative;overflow:hidden;min-height:360px;display:flex;align-items:center}
+.hero:after{content:"♡";position:absolute;right:7%;top:2%;font:clamp(150px,25vw,290px) "Playfair Display";color:#b96f791b}
+.hero-content{position:relative;z-index:1;max-width:650px}
+.eyebrow{text-transform:uppercase;letter-spacing:.19em;font-size:.72rem;font-weight:700;color:var(--dark)}
+h1,h2,h3{font-family:"Playfair Display",serif;font-weight:500;line-height:1.15}
+h1{font-size:clamp(2.7rem,7vw,5.6rem);letter-spacing:-.04em;margin:15px 0}
+h1 em{color:var(--dark)}
+.hero p{max-width:480px;color:#705b5d}
+.date{font-size:.8rem;letter-spacing:.08em;color:var(--muted);margin-top:25px}
+section{padding-top:68px}
+.sectionhead{margin-bottom:24px}
+.sectionhead h2{font-size:clamp(2rem,4vw,3rem);margin:8px 0}
+.sectionhead p{margin:0;color:var(--muted)}
+.story{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:clamp(22px,4vw,34px)}
+.card p{color:var(--muted)}
+.counter{background:#503b3e;color:#fffaf7;display:flex;flex-direction:column;justify-content:center}
+.counter .eyebrow{color:#efc4c7}
+.days{font:clamp(2.5rem,5vw,4rem) "Playfair Display";line-height:1.2;margin:10px 0}
+.quote{margin-top:18px;padding:22px 25px;border-left:3px solid var(--rose);background:#fbf0ec;border-radius:0 16px 16px 0;color:#72595b;font:italic 1.2rem "Playfair Display"}
+.authwrap{max-width:560px;margin:auto}
+.field{display:grid;gap:7px;margin:14px 0}
+.field label{font-size:.82rem;font-weight:700}
+.field input,.field textarea{width:100%;border:1px solid #e4d3ce;background:#fffdfb;border-radius:12px;padding:12px 14px;outline:none}
+.field input:focus,.field textarea:focus{border-color:var(--rose)}
+.btn{border:0;border-radius:999px;padding:11px 17px;font-weight:700;font-size:.9rem}
+.primary{background:var(--dark);color:#fff}
+.secondary{background:#f4e7e2;color:#744b50}
+.quiet{background:transparent;color:var(--dark)}
+.danger{background:#f9e7e6;color:#8d3f43}
+.full{width:100%}
+.hidden{display:none!important}
+.notice{padding:12px 14px;border-radius:12px;margin-top:14px;font-size:.88rem;white-space:pre-wrap;overflow-wrap:anywhere}
+.info{background:#f6eee9;color:#6b5152}
+.error{background:#fff0ef;color:#8c3539}
+.success{background:#eaf4ed;color:#315e46}
+.signedrow{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+.upload{margin-bottom:22px}
+.uploadgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.drop{border:1.5px dashed #d8b9b7;background:#fff9f6;border-radius:16px;padding:22px;text-align:center}
+.drop input{max-width:100%;font-size:.82rem}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.photo{overflow:hidden;background:white;border:1px solid var(--line);border-radius:18px}
+.frame{aspect-ratio:4/4.4;background:#f0e3df;overflow:hidden;cursor:zoom-in}
+.frame img{width:100%;height:100%;object-fit:cover;display:block}
+.meta{padding:13px}
+.caption{font:1.05rem "Playfair Display";overflow-wrap:anywhere}
+.small{font-size:.75rem;color:var(--muted)}
+.actions{display:flex;justify-content:flex-end;margin-top:8px}
+.empty{text-align:center;border:1px dashed #dfc7c3;border-radius:20px;padding:42px 18px;color:var(--muted)}
+.letter{max-width:800px;margin:auto;background:linear-gradient(140deg,#fff,#fff7f3)}
+footer{text-align:center;padding:55px 0 25px;color:#9a8282;font-size:.8rem}
+.lightbox{position:fixed;inset:0;background:#201518ed;z-index:9;display:flex;align-items:center;justify-content:center;padding:20px}
+.lightbox img{max-width:95%;max-height:85vh;object-fit:contain}
+.lightbox button{position:absolute;right:18px;top:18px}
+.busy{opacity:.65;pointer-events:none}
+@media(max-width:740px){.shell{padding:0 15px}.hero{min-height:320px;border-radius:22px}.story,.uploadgrid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}section{padding-top:52px}.navnote{display:none}}
+</style>
 </head>
-
 <body>
-
-  <nav class="nav">
-    <a href="#home" class="logo">Our Little World <span>♡</span></a>
-    <div class="nav-links">
-      <a href="#story">Our Story</a>
-      <a href="#memories">Memories</a>
-      <a href="#time">Our Time</a>
-      <a href="#letter">A Letter</a>
-    </div>
-  </nav>
-
-  <header class="hero" id="home">
-    <div class="eyebrow">A little place made for us</div>
-
-    <h1>In a world full of people,<br><em>I'd still choose you.</em></h1>
-
-    <p>
-      This is our little corner of the universe.
-      A home for our memories, our laughter, our growth,
-      and all the beautiful things still waiting for us.
-    </p>
-
-    <a href="#story" class="button">Enter our world ♡</a>
-
-    <div class="hero-heart">♡</div>
-    <div class="handwritten">Just you, me, and our little world.</div>
-  </header>
-
-  <section class="story" id="story">
-    <div class="section-heading">
-      <div class="eyebrow">Chapter one</div>
-      <h2>Our little story</h2>
-      <p>Not a perfect love story. A real one, and one worth choosing every day.</p>
-    </div>
-
-    <div class="story-content">
-      <p class="big-letter">
-        Somewhere between ordinary days and unexpected moments,
-        we became something special.
-      </p>
-
-      <p>
-        There is something beautiful about finding a person with whom
-        the little things begin to mean everything. The conversations,
-        the laughter, the quiet moments, and even the days when life
-        asks a little more of us.
-      </p>
-
-      <p>
-        We are still learning each other. Still growing, still figuring
-        things out, and still writing a story that belongs to us.
-        That is what makes it ours.
-      </p>
-
-      <p class="handwritten">And this is only the beginning. ♡</p>
-    </div>
-  </section>
-
-  <section class="gallery" id="memories">
-    <div class="section-heading">
-      <div class="eyebrow">Little moments, forever</div>
-      <h2>Our memory lane</h2>
-      <p>Five little windows into our world. Tap any photo to see it larger.</p>
-    </div>
-
-    <div class="photo-grid">
-
-      <div class="photo-card" data-photo="IMG-20260915-WA0046.jpg">
-        <img
-          src="IMG-20260915-WA0046.jpg"
-          alt="A memory of Huffy and Liora"
-          loading="lazy"
-        >
-        <div class="photo-caption">A moment to keep ♡</div>
-      </div>
-
-      <div class="photo-card" data-photo="IMG-20261001-WA0182.jpg">
-        <img
-          src="IMG-20261001-WA0182.jpg"
-          alt="Another memory of Huffy and Liora"
-          loading="lazy"
-        >
-        <div class="photo-caption">My favourite kind of day</div>
-      </div>
-
-      <div class="photo-card" data-photo="IMG-20260929-WA0041.jpg">
-        <img
-          src="IMG-20260929-WA0041.jpg"
-          alt="A special moment together"
-          loading="lazy"
-        >
-        <div class="photo-caption">One for the memories</div>
-      </div>
-
-      <div class="photo-card" data-photo="IMG-20261009-WA0019.jpg">
-        <img
-          src="IMG-20261009-WA0019.jpg"
-          alt="A captured moment in our story"
-          loading="lazy"
-        >
-        <div class="photo-caption">Us, being us</div>
-      </div>
-
-      <div class="photo-card" data-photo="IMG-20260916-WA0001.jpg">
-        <img
-          src="IMG-20260916-WA0001.jpg"
-          alt="Another captured memory"
-          loading="lazy"
-        >
-        <div class="photo-caption">A little piece of forever ♡</div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="anniversary" id="time">
-    <div class="section-heading">
-      <div class="eyebrow">Since the beginning</div>
-      <h2>Look how far we've come.</h2>
-      <p>
-        Every second is another small piece of the time
-        we have spent being part of each other's lives.
-      </p>
-    </div>
-
-    <div class="counter">
-      <div class="counter-item">
-        <span class="counter-number" id="days">0</span>
-        <span class="counter-label">Days</span>
-      </div>
-
-      <div class="counter-item">
-        <span class="counter-number" id="hours">00</span>
-        <span class="counter-label">Hours</span>
-      </div>
-
-      <div class="counter-item">
-        <span class="counter-number" id="minutes">00</span>
-        <span class="counter-label">Minutes</span>
-      </div>
-
-      <div class="counter-item">
-        <span class="counter-number" id="seconds">00</span>
-        <span class="counter-label">Seconds</span>
-      </div>
-    </div>
-
-    <div class="anniversary-note">
-      Since 22 November 2025, and counting. ♡
-    </div>
-  </section>
-
-  <section class="letter" id="letter">
-    <div class="section-heading">
-      <div class="eyebrow">Words from the heart</div>
-      <h2>A little letter for you</h2>
-    </div>
-
-    <article class="letter-paper">
-      <h3>To my favourite person,</h3>
-
-      <p>
-        If there is one thing I want you to know, it is that I don't
-        see what we have as something to take for granted. Having
-        someone to share life with is a beautiful thing, and I want
-        to treat what we have with the care it deserves.
-      </p>
-
-      <p>
-        I know that love is more than sweet words and beautiful
-        moments. It is patience, honesty, effort, accountability,
-        and the willingness to understand each other even when
-        things are not easy.
-      </p>
-
-      <p>
-        I cannot promise that every day will be perfect. What I can
-        promise is that I want to keep learning, keep growing, and
-        keep showing up with intention. I want us to build something
-        that feels safe, genuine, and strong enough to grow with us.
-      </p>
-
-      <p>
-        Thank you for being part of my world. For the moments we
-        already have, for the ones we are creating now, and for
-        all the ordinary little days that may one day become
-        our favourite memories.
-      </p>
-
-      <p>
-        Whatever the future brings, I hope we never stop making
-        room for laughter, honest conversations, new experiences,
-        and the small things that make us who we are together.
-      </p>
-
-      <p>Here's to us, and to the story we are still writing.</p>
-
-      <div class="signature">With love, always. ♡</div>
-    </article>
-  </section>
-
-  <section class="quote-section">
-    <div class="quote-mark">“</div>
-    <blockquote>
-      The beautiful thing isn't finding someone perfect.
-      It's choosing to grow together, imperfectly and honestly.
-    </blockquote>
-    <div class="quote-credit">A little reminder for us ♡</div>
-  </section>
-
-  <footer>
-    <div class="footer-title">Our Little World ♡</div>
-    <p>Made with love, for Huffy &amp; Liora.</p>
-    <p>One story. Two people. A thousand little moments.</p>
-    <a href="#home" class="top-link">Back to the beginning ↑</a>
-  </footer>
-
-  <div
-    class="lightbox"
-    id="lightbox"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Enlarged photograph"
-  >
-    <button class="close-lightbox" id="closeLightbox" aria-label="Close photo">&times;</button>
-    <img id="lightboxImage" src="" alt="Enlarged memory">
-  </div>
-
-  <script>
-    // Relationship start date: 22 November 2025.
-    // Months in JavaScript start at zero, so November is 10.
-    const startDate = new Date(2025, 10, 22, 0, 0, 0);
-
-    function updateCounter() {
-      const now = new Date();
-      let difference = now.getTime() - startDate.getTime();
-
-      if (difference < 0) difference = 0;
-
-      const totalSeconds = Math.floor(difference / 1000);
-      const days = Math.floor(totalSeconds / 86400);
-      const hours = Math.floor((totalSeconds % 86400) / 3600);
-      const minutes = Math.floor((totalSeconds % 3600) / 60);
-      const seconds = totalSeconds % 60;
-
-      document.getElementById("days").textContent = days;
-      document.getElementById("hours").textContent =
-        String(hours).padStart(2, "0");
-      document.getElementById("minutes").textContent =
-        String(minutes).padStart(2, "0");
-      document.getElementById("seconds").textContent =
-        String(seconds).padStart(2, "0");
-    }
-
-    updateCounter();
-    setInterval(updateCounter, 1000);
-
-    // Open gallery photos in a full-screen viewer.
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImage = document.getElementById("lightboxImage");
-    const closeLightbox = document.getElementById("closeLightbox");
-
-    document.querySelectorAll(".photo-card").forEach(function(card) {
-      card.addEventListener("click", function() {
-        const photo = card.dataset.photo;
-        lightboxImage.src = photo;
-        lightboxImage.alt = card.querySelector("img").alt;
-        lightbox.classList.add("open");
-        closeLightbox.focus();
-      });
-    });
-
-    function closePhoto() {
-      lightbox.classList.remove("open");
-      lightboxImage.src = "";
-    }
-
-    closeLightbox.addEventListener("click", closePhoto);
-
-    lightbox.addEventListener("click", function(event) {
-      if (event.target === lightbox) closePhoto();
-    });
-
-    document.addEventListener("keydown", function(event) {
-      if (event.key === "Escape") closePhoto();
-    });
-
-    // Show a clear placeholder if an image filename is incorrect.
-    document.querySelectorAll(".photo-card img").forEach(function(img) {
-      img.addEventListener("error", function() {
-        img.alt = "Photo could not load. Check the filename in GitHub.";
-        img.style.objectFit = "contain";
-        img.style.padding = "20px";
-        img.style.background = "#f4e6e6";
-      });
-    });
-  </script>
-
+<div class="shell">
+<header><div class="brand">Our Little <span>World ♡</span></div><div class="navnote muted">a private corner, just for us</div></header>
+<main>
+<div class="hero"><div class="hero-content"><div class="eyebrow">just you, me, and our memories</div><h1>A little world<br>of <em>our own.</em></h1><p>For the moments that become stories, the ordinary days that mean everything, and the memories we never want to lose.</p><div class="date">OUR STORY BEGAN · 22 NOVEMBER 2025</div></div></div>
+<section><div class="sectionhead"><div class="eyebrow">the beginning</div><h2>Our story, still unfolding.</h2><p>No grand performance. Just us, choosing each other.</p></div><div class="story"><article class="card"><h3>For all the little things</h3><p>This is our little corner to keep the pictures, the inside jokes, the random days, and the moments that would be easy to forget if we didn't save them.</p><p>May we keep making a life that feels like home to both of us — one honest conversation and one memory at a time.</p></article><article class="card counter"><div class="eyebrow">since 22 november 2025</div><div class="days" id="days">—</div><div class="muted" style="color:#e3ccca">days of our story so far ♡</div></article></div><div class="quote">“Somewhere in the middle of ordinary days, you became one of my favourite parts of being alive.”</div></section>
+<section id="gallery"><div class="sectionhead"><div class="eyebrow">kept close</div><h2>Our memories.</h2><p>A private gallery for two accounts. Add new photos whenever you want.</p></div>
+<div id="authPanel" class="authwrap"><div class="card"><div class="eyebrow">members only</div><h3>Come on in, love.</h3><p class="muted">Sign in using one of the two approved email addresses. Only those accounts can see or upload photos.</p>
+<form id="loginForm"><div class="field"><label for="email">Approved email</label><input id="email" type="email" autocomplete="email" required placeholder="you@example.com"></div><div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" minlength="8" required placeholder="At least 8 characters"></div><button class="btn primary full" id="loginBtn">Sign in</button></form>
+<p class="muted">First time here? Create an account with one of the two approved email addresses.</p><button class="btn secondary full" id="showSignup" type="button">Create an approved account</button>
+<form id="signupForm" class="hidden"><div class="field"><label for="newEmail">Approved email</label><input id="newEmail" type="email" autocomplete="email" required></div><div class="field"><label for="newPassword">Create password</label><input id="newPassword" type="password" autocomplete="new-password" minlength="8" required></div><button class="btn primary full" id="signupBtn">Create account</button><button class="btn quiet full" id="cancelSignup" type="button">Cancel</button></form><div id="authMsg" class="notice hidden" role="status"></div></div></div>
+<div id="privatePanel" class="hidden"><div class="signedrow"><div id="memberLabel" class="muted"></div><div class="tools"><button class="btn secondary" id="refresh" type="button">Refresh gallery</button><button class="btn quiet" id="logout" type="button">Sign out</button></div></div>
+<div class="card upload"><div class="uploadgrid"><div><div class="eyebrow">save a moment</div><h3>Add to our world</h3><p class="muted">Choose a photo and add a caption if you like. JPG, PNG, WebP and GIF supported.</p><div class="field"><label for="captionInput">Caption (optional)</label><textarea id="captionInput" rows="2" maxlength="180" placeholder="That day when…"></textarea></div></div><div class="drop"><div style="font-size:1.8rem;color:var(--rose)">♡</div><b>Choose a photo</b><div class="field"><input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp,image/gif"></div><button class="btn primary full" id="upload" type="button">Upload memory</button><p class="muted" style="font-size:.76rem">Maximum 10 MB per photo.</p></div></div><div id="uploadMsg" class="notice hidden" role="status"></div></div><div id="galleryStatus" class="muted" style="margin-bottom:14px"></div><div id="photoGrid" class="gallery"></div><div id="empty" class="empty hidden"><div style="font-size:2.5rem;color:var(--rose)">♡</div><h3>The first memory is waiting.</h3><p>Upload a photo and start filling this little space with your story.</p></div></div></section>
+<section><div class="card letter"><div class="eyebrow">a little reminder</div><h2 style="margin-top:10px">It's the little things.</h2><p>Not every beautiful moment announces itself. Sometimes it's a laugh that lasts too long, a quiet check-in, a picture taken without thinking, or the comfort of knowing someone is on your side.</p><p>Let's keep the memories — and keep showing up for the people in them.</p><p style="font:italic 1.3rem 'Playfair Display';color:var(--dark)">Always us. ♡</p></div></section>
+</main><footer>Made with love, for two people and their little world. ♡</footer></div>
+<div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true"><button id="closeLightbox" class="btn secondary">Close ✕</button><img id="largeImage" alt="Expanded memory"></div>
+<script>
+window.SUPABASE_URL="https://tyrxoctwclklndzixyvf.supabase.co";
+window.SUPABASE_ANON_KEY="sb_publishable_B0LsNX1lh_IDdoOELbTTPQ_LFfX5SQb";
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(()=>{"use strict";
+const BUCKET="our-little-world",MAX=10*1024*1024,$=id=>document.getElementById(id);
+let sb=null,user=null,refreshId=0;
+$("days").textContent=Math.max(0,Math.floor((new Date()-new Date("2025-11-22T00:00:00"))/86400000)).toLocaleString();
+function msg(el,text,type="info"){el.textContent=text;el.className="notice "+type}
+function hide(el){el.classList.add("hidden");el.textContent=""}
+function busy(el,on,label){if(on){el.dataset.label=el.textContent;el.textContent=label;el.disabled=true;el.classList.add("busy")}else{el.textContent=el.dataset.label||el.textContent;el.disabled=false;el.classList.remove("busy")}}
+function showAuth(){user=null;$("authPanel").classList.remove("hidden");$("privatePanel").classList.add("hidden")}
+function showPrivate(u){user=u;$("authPanel").classList.add("hidden");$("privatePanel").classList.remove("hidden");$("memberLabel").textContent="Signed in as "+(u.email||"approved member")}
+function ready(){return !window.SUPABASE_URL.includes("YOUR_PROJECT_REF")&&!window.SUPABASE_ANON_KEY.includes("YOUR_SUPABASE")}
+function cleanName(s){return s.normalize("NFKD").replace(/[^a-zA-Z0-9._-]+/g,"-").slice(-90)||"photo"}
+async function load(){
+if(!sb||!user)return;
+const n=++refreshId;
+$("galleryStatus").textContent="Loading your memories…";
+$("photoGrid").replaceChildren();
+$("empty").classList.add("hidden");
+const {data,error}=await sb.from("gallery_photos").select("id,user_id,image_path,caption,created_at").order("created_at",{ascending:false});
+if(n!==refreshId)return;
+if(error){$("galleryStatus").textContent="Couldn't load the gallery. Check setup.sql.";msg($("uploadMsg"),"Gallery error: "+error.message,"error");return}
+if(!data.length){$("galleryStatus").textContent="0 memories saved so far";$("empty").classList.remove("hidden");return}
+$("galleryStatus").textContent=data.length+(data.length===1?" memory saved":" memories saved");
+const results=await Promise.all(data.map(async p=>{const r=await sb.storage.from(BUCKET).createSignedUrl(p.image_path,1800);return {p,url:r.error?null:r.data.signedUrl}}));
+if(n!==refreshId)return;
+for(const {p,url} of results){
+const card=document.createElement("article");card.className="photo";
+const frame=document.createElement("div");frame.className="frame";
+if(url){const im=document.createElement("img");im.src=url;im.alt=p.caption||"A memory from our gallery";im.loading="lazy";im.onclick=()=>{$("largeImage").src=url;$("lightbox").classList.remove("hidden")};frame.append(im)}else{frame.textContent="Photo unavailable";frame.style.padding="20px"}
+const meta=document.createElement("div");meta.className="meta";
+const cap=document.createElement("div");cap.className="caption";cap.textContent=p.caption||"A little memory ♡";
+const date=document.createElement("div");date.className="small";date.textContent=new Date(p.created_at).toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"});
+const actions=document.createElement("div");actions.className="actions";
+const del=document.createElement("button");del.className="btn danger";del.type="button";del.textContent="Delete";del.onclick=()=>remove(p);
+actions.append(del);meta.append(cap,date,actions);card.append(frame,meta);$("photoGrid").append(card)
+}}
+async function remove(p){
+if(!confirm("Delete this memory permanently for both of you?"))return;
+msg($("uploadMsg"),"Deleting memory…");
+const r=await sb.storage.from(BUCKET).remove([p.image_path]);
+if(r.error){msg($("uploadMsg"),"Could not delete image: "+r.error.message,"error");return}
+const d=await sb.from("gallery_photos").delete().eq("id",p.id);
+if(d.error){msg($("uploadMsg"),"Image removed but its record could not be deleted. Refresh the gallery.","error");return}
+msg($("uploadMsg"),"Memory deleted.","success");load()
+}
+$("loginForm").onsubmit=async e=>{
+e.preventDefault();hide($("authMsg"));
+if(!sb){msg($("authMsg"),"Supabase setup is incomplete.","error");return}
+const b=$("loginBtn");busy(b,true,"Signing in…");
+const r=await sb.auth.signInWithPassword({email:$("email").value.trim().toLowerCase(),password:$("password").value});
+busy(b,false);
+if(r.error){msg($("authMsg"),r.error.message,"error");return}
+showPrivate(r.data.user);load()
+};
+$("showSignup").onclick=()=>{$("signupForm").classList.remove("hidden");$("showSignup").classList.add("hidden");$("newEmail").value=$("email").value.trim()};
+$("cancelSignup").onclick=()=>{$("signupForm").classList.add("hidden");$("showSignup").classList.remove("hidden");hide($("authMsg"))};
+$("signupForm").onsubmit=async e=>{
+e.preventDefault();hide($("authMsg"));
+if(!sb){msg($("authMsg"),"Supabase setup is incomplete.","error");return}
+const b=$("signupBtn");busy(b,true,"Creating account…");
+const r=await sb.auth.signUp({email:$("newEmail").value.trim().toLowerCase(),password:$("newPassword").value,options:{emailRedirectTo:location.origin+location.pathname}});
+busy(b,false);
+if(r.error){msg($("authMsg"),r.error.message,"error");return}
+if(r.data.session&&r.data.user){showPrivate(r.data.user);load()}
+else msg($("authMsg"),"If this is an approved email, check your inbox for the confirmation link, then sign in. Unapproved accounts cannot access the private gallery.","success")
+};
+$("upload").onclick=async()=>{
+hide($("uploadMsg"));
+if(!sb||!user){msg($("uploadMsg"),"Sign in first.","error");return}
+const f=$("fileInput").files[0];
+if(!f){msg($("uploadMsg"),"Choose a photo first.","error");return}
+if(!["image/jpeg","image/png","image/webp","image/gif"].includes(f.type)){msg($("uploadMsg"),"Choose a JPG, PNG, WebP or GIF image.","error");return}
+if(f.size>MAX){msg($("uploadMsg"),"Photo exceeds 10 MB. Choose a smaller file.","error");return}
+const b=$("upload");busy(b,true,"Uploading…");
+const path=user.id+"/"+crypto.randomUUID()+"-"+cleanName(f.name);
+const up=await sb.storage.from(BUCKET).upload(path,f,{cacheControl:"3600",contentType:f.type,upsert:false});
+if(up.error){busy(b,false);msg($("uploadMsg"),"Upload failed: "+up.error.message,"error");return}
+const row=await sb.from("gallery_photos").insert({user_id:user.id,image_path:path,caption:$("captionInput").value.trim()});
+if(row.error){await sb.storage.from(BUCKET).remove([path]);busy(b,false);msg($("uploadMsg"),"Could not save photo record: "+row.error.message,"error");return}
+$("fileInput").value="";$("captionInput").value="";busy(b,false);
+msg($("uploadMsg"),"Memory saved to your private gallery. ♡","success");load()
+};
+$("refresh").onclick=load;
+$("logout").onclick=async()=>{await sb.auth.signOut();showAuth();hide($("uploadMsg"))};
+$("closeLightbox").onclick=()=>{$("lightbox").classList.add("hidden");$("largeImage").removeAttribute("src")};
+$("lightbox").onclick=e=>{if(e.target===$("lightbox"))$("closeLightbox").click()};
+document.onkeydown=e=>{if(e.key==="Escape")$("closeLightbox").click()};
+if(window.supabase?.createClient){
+sb=window.supabase.createClient(window.SUPABASE_URL,window.SUPABASE_ANON_KEY);
+sb.auth.getSession().then(({data})=>{if(data.session?.user){showPrivate(data.session.user);load()}});
+sb.auth.onAuthStateChange((event,session)=>{if(session?.user&&user?.id!==session.user.id){showPrivate(session.user);setTimeout(load,0)}else if(event==="SIGNED_OUT")showAuth()})
+}else msg($("authMsg"),"Could not load Supabase. Check your internet connection and reload.","info");
+})();
+</script>
 </body>
 </html>
